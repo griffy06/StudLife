@@ -10,12 +10,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manage.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/studlife/wsgi.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/studlife/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-148" />
           </provider>
         </entry>
       </file>
@@ -62,6 +74,16 @@
             <path>
               <item name="StudLife" type="b2602c69:ProjectViewProjectNode" />
               <item name="StudLife" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StudLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StudLife" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StudLife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StudLife" type="462c0819:PsiDirectoryNode" />
               <item name="studlife" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -71,6 +93,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/My_dodge" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -127,17 +150,17 @@
       <updated>1584366738618</updated>
       <workItem from="1584366749059" duration="2135000" />
       <workItem from="1584368940045" duration="41000" />
-      <workItem from="1584370646249" duration="2195000" />
+      <workItem from="1584370646249" duration="3007000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4371000" />
+    <option name="totallyTimeSpent" value="5183000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="18" width="1286" height="640" extended-state="1" />
+    <frame x="0" y="18" width="1286" height="640" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25814334" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25814334" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -151,7 +174,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3280943" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3280943" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -177,6 +200,14 @@
         <state relative-caret-position="136">
           <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studlife/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/studlife/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148" />
       </provider>
     </entry>
   </component>
