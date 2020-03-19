@@ -16,7 +16,7 @@ You need to fill in the following details:
     </div>
 <div>
     <div class="container" style="margin-top:5%;">
-<form action="" method="post">
+<form action="{% url 'outpass' user.id %}" method="post">
     {% csrf_token %}
   <div class="form-group col-md-6">
     <label for="full_name">Full name</label>

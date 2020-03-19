@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Outpass granted</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cookie|Lobster|Satisfy&display=swap" rel="stylesheet">
+    <style>
+        #button {
+            margin-left: 520px;
+        }
+        #button2 {
+            margin-left: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;text-align: center;"><h3>Hey {{ user.username }}, your outpass has been granted!</h3></div>
+<br><br><br><div class="container" style="text-align: center"><h5>Click here to download</h5></div>
+<br><a id="button2" href="{% url 'pdf' user.id %}" class="btn btn-success btn-md" tabindex="-1" role="button" aria-disabled="true" download>Download</a>
+<br><br><br><br><br><a id="button" href="{% url 'back_outpass' user.id %}" class="btn btn-info btn-lg" tabindex="-1" role="button" aria-disabled="true">Request another outpass</a>
+
+</body>
+</html>
