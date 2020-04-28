@@ -5,7 +5,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.cache import cache_control
 from warden.models import Profile, Granted_outpasses
-from doctor.models import Profile, Granted_appointment
+from doctor.models import Profile2, Granted_appointment
 from .render import Render
 from .render import Render_1
 
@@ -112,7 +112,7 @@ def book_appointment(request, user_id):
         user = User.objects.get(pk=user_id)
         user.student.appointments = 1
         user.save()
-        profile = Profile()
+        profile = Profile2()
         profile.username = user.username
         profile.time = request.POST.get('time')
         profile.date = request.POST.get('date')
