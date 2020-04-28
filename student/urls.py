@@ -10,5 +10,7 @@ urlpatterns = [
     path('<int:user_id>/digilocker/',views.digilocker, name="digilocker"),
     path('<int:user_id>/outpass/back',views.back_outpass, name="back_outpass"),
     path('<int:user_id>/render/pdf',views.pdf, name="pdf")
+    path('<int:user_id>/book_appointment/back',views.back_appointment, name="back_appointment"),
+    path('<int:user_id>/render/pdf_appointment',views.pdf, name="pdf_appointment")
 
 ]
