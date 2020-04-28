@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
-from .models import Profile, Granted_appointment
+from .models import Profile2, Granted_appointment
 
 class UserFormView(View):
 
@@ -24,12 +24,12 @@ class UserFormView(View):
 
 
 def logged_in(request):
-    all_profiles = Profile.objects.all()
+    all_profiles = Profile2.objects.all()
     return render(request, 'doctor/doctor_dashboard.html', {'all_profiles': all_profiles})
 
 
 def individual_request(request, profile_id):
-    profile = Profile.objects.get(pk=profile_id)
+    profile = Profile2.objects.get(pk=profile_id)
     user = User.objects.get(username=profile.username)
     if request.method == "GET":
         return render(request, 'doctor/individual_request.html', {'profile': profile})
