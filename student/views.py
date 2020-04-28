@@ -95,6 +95,7 @@ def pdf(request,user_id):
     }
 
     return Render.render('student/pdf.html', params)
+
 def book_appointment(request, user_id):
     if request.method == "GET":
         user = User.objects.get(pk=user_id)
@@ -122,7 +123,7 @@ def book_appointment(request, user_id):
 
 def back_appointment(request, user_id):
     user = User.objects.get(pk=user_id)
-    user.student.appointment = 0
+    user.student.appointments = 0
     user.save()
     permit = Granted_appointment.objects.get(username=user.username)
     permit.delete()
