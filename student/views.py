@@ -7,6 +7,7 @@ from django.views.decorators.cache import cache_control
 from warden.models import Profile, Granted_outpasses
 from doctor.models import Profile, Granted_appointment
 from .render import Render
+from .render import Render_1
 
 
 class UserFormView(View):
@@ -136,4 +137,4 @@ def pdf_appointment(request,user_id):
         'date' : permit.date,
         'time': permit.time,
     }
-    return Render.render('student/pdf_appointment.html', params)
+    return Render_1.render('student/pdf_appointment.html', params)
