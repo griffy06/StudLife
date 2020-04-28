@@ -4,7 +4,12 @@
         <title>StudLife</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
-        <style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <style>
             img{
                 height: 200px;
                 width: 200px;
@@ -20,45 +25,57 @@
     </head>
     <body>
 
+        <header>
+            <nav class="navbar navbar-default">
+               <div class="container">
+              
+                 <div class="col-lg-12 col-xs-3">
+               <h1>STUDLIFE NIGHT CANTEEN</h1>
+             </div>
+             </div>
+             </nav>
+             <nav class="navbar navbar-expand-lg navbar-light bg-light">
+             <h3>
+                <a class="navbar-brand" href="#">MENU</a>
+             </h3>
+                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+                 </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                 <ul class="navbar-nav">
+                   <li class="nav-item active">
+                     <h4>
+                        <a class="nav-link" href="menu.html">Hostel Favourites</a></li>
+                     </h4>
+                   
+                  <li class="nav-item">
+                      <h4>
+                          <a class="nav-link" href="refreshments.html">Refreshments</a></li>
+                        </h4>
+                    
+                       <li class="active">
+                          <h4>
+                              <a class="nav-link" href="maincourse.html">Main Course <span class="sr-only">(current)</span></a></li>
+                            </h4>
+                        
+                       <li class="nav-item">
+                          <h4>
+                              <a class="nav-link" href="fastfood.html">Fast Food</a></li>
+                            </h4>
 
-<header>
-	<nav class="navbar navbar-default">
-	  <div class="container">
-		  <!-- <img src="#" > -->
-		<h1>STUDLIFE NIGHT CANTEEN</h1>
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		  </button>
-		  <!--<a class="navbar-brand" href="#">Brand</a>-->
-		</div>
+                 </ul>
+               </div> 
+             </nav>
+             <!-- </nav> -->
+           
+           </header>
 
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav">
-			
-            <li><a href="menu.html">Hostel Favourites</a></li>
-            <li><a href="refreshments.html">Refreshments</a></li>
-            <li><a href="fastfood.html">Fast Food</a></li>
-            <li class="active"><a href="maincourse.html">Main Course<span class="sr-only">(current)</span></a></li>
-			
-			
-		  </ul>
-		</div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
-</header>
-
-
-<div class="row text-center" style="display: flex; flex-wrap: wrap;" >
+<div class="container" class="m-5 pb-5 bg-info">
+<div class="row text-center" style="display: flex; flex-wrap: wrap;" class="m-5 pb-5 bg-info">
   <!-- <div class="col-lg-12">
       <h3> Our most popular sites</h3>
   </div> -->
-  <div class="col-md-3 col-sm-6">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="alooparatha.jpeg" >
       <div class="caption">
@@ -75,7 +92,7 @@
       
         
   </div>  
-  <div class="col-md-3 col-sm-6">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="aloopyaaz.jpg">
       <div class="caption">
@@ -88,7 +105,7 @@
         </p>
     </div>
   </div>  
-  <div class="col-md-3 col-sm-6">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="vegrice.jpeg">
       <div class="caption">
@@ -101,7 +118,7 @@
         </p>
     </div>
   </div>  
-  <div class="col-md-3 col-sm-6">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="eggrice.jpg">
       <div class="caption">
@@ -114,7 +131,7 @@
         </p>
     </div>
   </div>  
-  <div class="col-md-3 col-sm-6">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="chirice.jpg">
       <div class="caption">
@@ -127,7 +144,7 @@
         </p>
     </div>
   </div>  
-  <div class="col-md-3 col-sm-6">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="eggburji.JPG">
       <div class="caption">
@@ -141,7 +158,7 @@
     </div>
   </div>  
 
-  <div class="col-md-3 col-sm-6">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="paneerparatha.jpg">
       <div class="caption">
@@ -154,7 +171,7 @@
         </p>
     </div>
   </div>  
-  <div class="col-md-3 col-sm-6">
+  <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="puro.jpeg">
       <div class="caption">
@@ -172,7 +189,7 @@
   
 
 
-
+</div>
  </div>
          
  </div>

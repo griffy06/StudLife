@@ -14,7 +14,10 @@ header {
     margin: 10px 10px 0 0;
     float: right;
   }
-  
+  .px-2 {
+  padding-left: ($spacer * .5) !important;
+  padding-right: ($spacer * .5) !important;
+}
   .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
     background: none;
     color: #222;
