@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>StudLife</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href={% static 'index/style.css' %}>
   <link href="https://fonts.googleapis.com/css?family=Lobster|family=Cinzel:700|family=Niconne|family=Raleway&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,10 +23,17 @@
      color: black;
      opacity: 0.75;
   }
+  a.icons{
+     color: black;
+     opacity: 0.4;
+  }
+    a.icons:hover{
+        color: black;
+     opacity: 0.93;
+    }
 </style>
 <body>
-  
-    
+
 <!-- partial:index.partial.html -->
 <div>
   
@@ -33,7 +41,7 @@
   
   </canvas>
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="position: absolute;z-index:1;top:0px;width:100%;left:0px;font-size:large">
-    <a class="navbar-brand" style="" href="#"><img src="Sun_15_03_2020_22_32_12.png" height="100px" width="120px"></a>
+    <a class="navbar-brand" style="" href="#"><img alt="logo" src="{% static 'index/images/logo.png' %}" height="100px" width="120px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -58,10 +66,10 @@
  <!-- <p style="font-size:20px;color:black;opacity:0.5;margin-left:500px">Making lives easier...</p> -->
   <table style="width: 100%;">
     <tr>
-  <td><i class="fa fa-user-circle-o" aria-hidden="true"></i><br><p style="font-size: 30px;">Student</p></td>
-  <td><i class="fa fa-user-circle-o" aria-hidden="true"></i><br><p style="font-size: 30px;">Doctor</p></td>
-  <td><i class="fa fa-user-circle-o" aria-hidden="true"></i><br><p style="font-size: 30px;">Warden</p></td>
-  <td><i class="fa fa-user-circle-o" aria-hidden="true"></i><br><p style="font-size: 30px;">Canteen</p></td>
+  <td><a class="icons" href="{% url 'student_login' %}"><i class="fa fa-user-circle-o" aria-hidden="true"></i><br><p style="font-size: 30px;">Student</p></a></td>
+  <td><a class="icons" href="{% url 'doctor_login' %}"><i class="fa fa-user-circle-o" aria-hidden="true"></i><br><p style="font-size: 30px;">Doctor</p></a></td>
+  <td><a class="icons" href="{% url 'warden_login' %}"><i class="fa fa-user-circle-o" aria-hidden="true"></i><br><p style="font-size: 30px;">Warden</p></a></td>
+  <td><a class="icons" href="{% url 'canteen_login' %}"><i class="fa fa-user-circle-o" aria-hidden="true"></i><br><p style="font-size: 30px;">Canteen</p></a></td>
   </tr>
   </table>
   </span>
@@ -228,7 +236,7 @@
   
     function updateSize() {
       width = window.innerWidth;
-      height = window.innerHeight;
+      height = window.innerHeight+100;
       renderer.setSize(width, height);
     }
   }
