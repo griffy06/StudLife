@@ -41,12 +41,12 @@ def individual_request(request, profile_id):
             granted_appointment.date = profile.date
             granted_appointment.full_name = profile.full_name
             granted_appointment.save()
-            user.student.appointment = 2
+            user.student.appointments = 2
             user.save()
             profile.delete()
             return redirect('doctor_logged_in')
         else:
-            user.student.appointment = 3
+            user.student.appointments = 3
             user.save()
             profile.delete()
             return redirect('doctor_logged_in')
