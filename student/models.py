@@ -7,6 +7,7 @@ from django.dispatch import receiver
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     outpass = models.IntegerField(default=0)
+    appointments = models.IntegerField(default=0)
 
 
 @receiver(post_save, sender=User)
