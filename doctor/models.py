@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Profile(models.Model):
+class Profile2(models.Model):
     username = models.CharField(max_length=100, default=None)
     full_name = models.CharField(max_length=100, default=None)
     date = models.DateField(null=True, blank=True)
