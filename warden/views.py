@@ -19,7 +19,7 @@ class UserFormView(View):
         userGroup = Group.objects.get(user=user).name
         if user is not None and userGroup == 'wardens':
             login(request, user)
-            return redirect('warden_logged_in', user.id)
+            return redirect('warden_logged_in')
         else:
             return render(request, self.template_name)
 

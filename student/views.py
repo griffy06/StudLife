@@ -77,14 +77,23 @@ def back_outpass(request, user_id):
     user = User.objects.get(pk=user_id)
     user.student.outpass = 0
     user.save()
+    permit = Granted_outpasses.objects.get(username=user.username)
+    permit.delete()
     return redirect('outpass', user_id)
+
 
 def pdf(request,user_id):
     user = User.objects.get(pk=user_id)
     permit = Granted_outpasses.objects.get(username=user.username)
+    go=permit.full_name
     params = {
-        'user' : user,
-        'permit' : permit,
-        'request': request,
+        'full_name' : go,
+        'going_to' : permit.destination,
+        'vehicle': permit.vehicle,
+        'date' : permit.date,
+        'current_time': permit.present_time,
+        'departure_time':permit.departure_time,
+        'arrival_time': permit.arrival_time,
     }
+
     return Render.render('student/pdf.html', params)
