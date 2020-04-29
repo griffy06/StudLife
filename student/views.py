@@ -94,6 +94,9 @@ def refreshment(request, user_id):
     user = User.objects.get(pk=user_id)
     return render(request,'student/refreshments.html',{'user':user})
 
+def hc(request, user_id):
+    user = User.objects.get(pk=user_id)
+    return render(request, 'student/hc.html',{'user':user})
 
 def digilocker(request, user_id):
     if request.method == 'POST':
