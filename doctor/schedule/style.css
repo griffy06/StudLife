@@ -1,0 +1,131 @@
+BODY {
+    font-family: Trebuchet MS;
+    margin:20px;
+    background-color: #600040;
+ 
+  }
+  
+  H1 {
+    text-align: center;
+    color: #FFFFFF;
+  }
+  .myTimetable TBODY .time{
+      font-size: 12px;
+      width: 100%;
+  }
+  .myTimetable {
+    width:100%;
+    /* border-collapse: collapse; */
+    table-layout: fixed;
+    border-radius: 10px;
+    padding: 100px;
+  }
+  
+  .myTimetable THEAD{
+    color: #FFFFFF;
+    
+  }
+/*   
+  .myTimetable TBODY  {
+    background-color: #ffd7a4;
+    padding: 10px;
+    border-radius: 10px;
+    /* border-style: outset; 
+    border-width: 5px;
+    border-style: dotted;
+  } */
+  .myTimetable tbody .hd{
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 10px;
+    border-color:white;
+    /* border-style: groove; */
+    background-color: #ff7a7a;
+  }
+  .myTimetable TBODY .kaush{
+    background-color:#90d2d8;  
+   /* padding:100px; */
+   border-radius: 10px;
+   /* border-style: outset; */
+   border-width: 5px;
+   border-style: dotted;
+  }
+  .myTimetable TBODY .vivek{
+    background-color:#ffd7a4;  
+   /* padding:100px; */
+   border-radius: 10px;
+   /* border-style: outset; */
+   border-width: 10px;
+   border-style: none;
+  }
+  .myTimetable TBODY .yasha{
+    background-color:#fff3cd;
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 5px;
+    border-style: dotted;
+  }
+  .myTimetable TBODY .kanchan{
+    background-color:#b9d2be ;
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 5px;
+    border-style: dotted;
+  }
+  .myTimetable TBODY .prit{
+    background-color:#249db0;
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 5px;
+    border-style: dotted;
+    /* #f6f5cc; */
+  }
+  .myTimetable TBODY .aks{
+    background-color:#dbc5ba;
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 5px;
+    border-style: dotted;
+  }
+
+  .myTimetable TD {
+    border: 3px white;
+    padding: 20px;
+    text-align: center;
+  }
+  .myTimetable TBODY TR TD:first-child {
+   
+    /* border-style: dashed; */
+    border-style: double;
+    border-spacing: 10px;
+    background-color:#fff0f6;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 50px;
+
+  }
+  .day{
+      font-size: 20px;
+      font-style: bold;
+      font-family: sans-serif;
+  }
+  .break, .lunch {
+    background-color: #bbd8c6 ;
+    font-style: italic;
+  }
+  
+  .subject {
+    font-size: 14pt;
+    font-style: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* color: red; */
+    margin-bottom:4px;
+  }
+  
+  .room {
+    font-size: 10pt;
+    font-style: italic;
+  }
+  .myTimetable TBODY .hd{
+      font-size: 14px;
+  }
