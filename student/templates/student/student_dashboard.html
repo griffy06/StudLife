@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load staticfiles %}
+{% load static %}
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
@@ -402,10 +402,13 @@
   </div>
   <div class="appointment">
       <form action="{% url 'book_appointment' user.id %}" method="get">
-    <span>Health<br> Center<span>
-      <br>
-       <br>
-            <button type="submit" class="btn btn-success">Open</button></form>
+    <span>Health Center</span>
+          <br><br>
+            <button type="submit" class="btn btn-success">Book</button></form>
+
+        <form action="{% url 'view_schedule' user.id %}" method="get">
+
+            <button type="submit" class="btn btn-success">View Schedule</button></form>
  </div>
  <div class="order">
       <form action="{% url 'order_food' user.id %}" method="get">
