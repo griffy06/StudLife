@@ -8,6 +8,12 @@ from warden.models import Profile, Granted_outpasses
 from doctor.models import Profile, Granted_appointment
 from .render import Render
 from .render import Render_1
+from .models import DocumentForm
+from .models import Files
+from django.template import RequestContext
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.shortcuts import render_to_response
 
 
 class UserFormView(View):
@@ -68,7 +74,25 @@ def order_food(request, user_id):
 
 
 def digilocker(request, user_id):
-    return render(request, 'student/digilocker_page.html')
+    if request.method == 'POST':
+        user=User.objects.get(pk=user_id)
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            new_file = Files(file=request.FILES['file'])
+            new_file.username = user.username
+            new_file.save()
+
+            # Redirect to the document list after POST
+            return redirect('digilocker', user_id)
+    else:
+        user=User.objects.get(pk=user_id)
+        form = DocumentForm()  # A empty, unbound form
+
+        # Load documents for the list page
+    files = Files.objects.all()
+
+    # Render list page with the documents and the form
+    return render(request, 'student/digilocker_page.html', {'files': files, 'form': form, 'user' : user})
 
 
 def back_outpass(request, user_id):

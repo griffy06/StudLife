@@ -5,6 +5,26 @@
     <title>digilocker</title>
 </head>
 <body>
-digilocker
+   {% if files %}
+        <ul>
+        {% for file in files %}
+            {% if file.username == user.username %}
+            <li><a href="{{ file.file.url }}">{{ file.file.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No documents.</p>
+    {% endif %}
+<form action="{% url 'digilocker' user.id %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p>{{ form.non_field_errors }}</p>
+            <p>{{ form.file.label_tag }} {{ form.file.help_text }}</p>
+            <p>
+                {{ form.file.errors }}
+                {{ form.file }}
+            </p>
+            <p><input type="submit" value="Upload" /></p>
+</form>
 </body>
 </html>
