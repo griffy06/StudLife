@@ -66,23 +66,33 @@ def outpass(request, user_id):
 
 
 def order_food(request, user_id):
-    return render(request, 'student/order_food_page.html')
+    user = User.objects.get(pk=user_id)
+    return render(request, 'student/order_food_page.html',{'user':user})
+
 
 def view_menu(request, user_id):
-    return render(request, 'student/menu.html')
+    user = User.objects.get(pk=user_id)
+    return render(request, 'student/menu.html',{'user':user})
 
 
 def fastfood(request, user_id):
-    return render(request,'student/fastfood.html')
+    user = User.objects.get(pk=user_id)
+    return render(request,'student/fastfood.html',{'user':user})
+
 
 def fav(request, user_id):
-    return render(request,'student/menu.html')
+    user = User.objects.get(pk=user_id)
+    return render(request,'student/menu.html',{'user':user})
+
 
 def maincourse(request, user_id):
-    return render(request,'student/maincourse.html')
+    user = User.objects.get(pk=user_id)
+    return render(request,'student/maincourse.html',{'user':user})
+
 
 def refreshment(request, user_id):
-    return render(request,'student/refreshments.html')
+    user = User.objects.get(pk=user_id)
+    return render(request,'student/refreshments.html',{'user':user})
 
 
 def digilocker(request, user_id):
