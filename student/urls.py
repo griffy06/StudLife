@@ -19,6 +19,7 @@ urlpatterns = [
     path('viewmenu/<int:user_id>/fav', views.fav, name='fav'),
     path('viewmenu/<int:user_id>/refreshment', views.refreshment, name='refreshment'),
     path('viewmenu/<int:user_id>/maincourse', views.maincourse, name='maincourse'),
+    path('hc/<int:user_id>', views.hc, name='hc'),
     path('hcSchedule/<int:user_id>', views.view_schedule, name='view_schedule'),
 
 ]
