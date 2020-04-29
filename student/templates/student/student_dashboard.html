@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
   <title>StudLife</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="{% static 'student/style.css' %}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <style>
@@ -369,8 +370,8 @@
 <nav class="menu" tabindex="0">
 	<div class="smartphone-menu-trigger"></div>
   <header class="avatar">
-    <img src="01.jpg" />
-    <h2>IIT2018302</h2>
+    <img src="{% static 'student/images/01.jpg' %}" />
+    <h2>{{ user.username }}</h2>
   </header>
 	<ul>
     <li tabindex="0" class="icon-home"><span>Home</span></li>
@@ -384,31 +385,34 @@
 
 <main>
   <div class="outpass">
+      <form action="{% url 'outpass' user.id %}" method="get">
      <span>Outpass<span>
        <br>
        <br>
        <br>
-      <button type="button" class="btn btn-success">Open</button>
+      <button type="submit" class="btn btn-success">Open</button></form>
   </div>
   <div class="appointment">
+      <form action="{% url 'book_appointment' user.id %}" method="get">
     <span>Health<br> Center<span>
       <br>
        <br>
-     <button type="button" class="btn btn-success">Open</button>
+            <button type="submit" class="btn btn-success">Open</button></form>
  </div>
  <div class="order">
+      <form action="{% url 'order_food' user.id %}" method="get">
   <span>Night<br>Canteen<span>
     <br>
        <br>
-       
-   <button type="button" class="btn btn-success">Open</button>
+        <button type="submit" class="btn btn-success">Open</button></form>
 </div>
 <div class="locker">
+    <form action="{% url 'digilocker' user.id %}" method="get">
   <span>Digilocker<span>
     <br>
        <br>
        <br>
-   <button type="button" class="btn btn-success">Open</button>
+          <button type="submit" class="btn btn-success">Open</button></form>
 </div>
   <!-- <div class="helper">
 		<span>Request Outpass</span>

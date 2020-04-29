@@ -32,7 +32,7 @@ class UserFormView(View):
 
 def logged_in(request,user_id):
     user = User.objects.get(pk=user_id)
-    return render(request,'student/student_page.html',{'user':user})
+    return render(request,'student/student_dashboard.html',{'user':user})
 
 
 def outpass(request, user_id):
