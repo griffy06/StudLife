@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order_food</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cookie|Lobster|Satisfy&display=swap" rel="stylesheet">
+    <style>
+        #button {
+            margin-left: 520px;
+        }
+        #button2 {
+            margin-left: 600px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="margin-top: 50px;text-align: center;"><h3>Hey {{ user.username }}, Welcome to the Night Canteen!</h3></div>
+<div class="schedule" style="margin-top: 50px;text-align: center;">
+   <form action="{% url 'view_schedule' user.id %}" method="get">
+     <h3>Health Center Schedule</h3>
+        <button type="submit" class="btn btn-success">View</button></form>
+
+
+      <!-- <button type="button" class="btn btn-danger">Edit</button> -->
+  </div>
+ <div class="book" style="margin-top: 50px;text-align: center;">
+ <form action="{% url 'book_appointment' user.id %}" method="get">
+  <h3>Appointment</h3>
+   <button type="submit" class="btn btn-success">Book</button>
+</div>
+
+</body>
+</html>
