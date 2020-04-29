@@ -311,11 +311,10 @@
 	<div class="smartphone-menu-trigger"></div>
   <header class="avatar">
     <img src="01.jpg" />
-    <h2>IIT2018302</h2>
+    <h2>{{ user.username }}</h2>
   </header>
 	<ul>
     <li tabindex="0" class="icon-home"><span>Home</span></li>
-    <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
     <li tabindex="0" class="icon-profile"><span>Edit Profile</span></li>
     <li tabindex="0" class="icon-customers"><span>About</span></li>
     <li tabindex="0" class="icon-users"><span>Developers</span></li>
@@ -325,27 +324,19 @@
 
 <main>
   <div class="schedule">
-     <span>Schedule<span>
-       <br>
+     <span>Schedule</span>
        <br>
        <br>
       <button type="button" class="btn btn-success">View</button>
       <button type="button" class="btn btn-danger">Edit</button>
   </div>
   <div class="appointment">
-    <span>Appointments<span>
+      <form action="{% url 'show' user.id%}" method="get">
+      <span>Appointment Requests</span>
       <br>
        <br>
-       <br>
-     <button type="button" class="btn btn-success">View</button>
- </div>
- <div class="pappointment">
-  <span>Past <br> Appointments<span>
-    <br>
-       <br>
-       
-   <button type="button" class="btn btn-success">View</button>
-</div>
+      <button type="submit" class="btn btn-success">View</button></form>
+
 <!-- <div class="locker">
   <span>Digilocker<span>
     <br>
