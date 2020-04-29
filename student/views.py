@@ -9,6 +9,7 @@ from doctor.models import Profile2, Granted_appointment
 from .render import Render
 from .models import DocumentForm
 from .models import Files
+from django.contrib.auth import logout
 
 
 class UserFormView(View):
@@ -160,3 +161,13 @@ def pdf_appointment(request,user_id):
         'time': permit.time,
     }
     return Render.render('student/pdf_appointment.html', params)
+
+
+def logout_student(request,user_id):
+    logout(request)
+    return redirect('index')
+
+
+def student_edit_profile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    return render(request, 'student/edit_profile_page.html', {'user': user})
