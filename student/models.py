@@ -27,16 +27,6 @@ class Files(models.Model):
     file = models.FileField()
 
 
-@receiver(post_save, sender=User)
-def create_user_files(sender, instance, created, **kwargs):
-    if created:
-        Files.objects.create(user=instance)
-
-
-@receiver(post_save, sender=User)
-def save_user_files(sender, instance, **kwargs):
-    instance.files.save()
-
 
 class DocumentForm(forms.Form):
     file = forms.FileField(

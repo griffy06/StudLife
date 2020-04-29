@@ -9,7 +9,7 @@
 <body>
 <div style="text-align: center;margin-top: 50px;text-decoration: underline"><h4>Appointment for {{ profile.username }}</h4></div>
 <div class="container" style="margin-top:5%;">
-<form action="{% url 'individual_request' profile.id %}" method="post">
+<form action="{% url 'doctor_individual_request' profile.id %}" method="post">
     {% csrf_token %}
   <div class="form-group col-md-6">
     <label for="full_name">Full name</label>

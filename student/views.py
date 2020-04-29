@@ -7,13 +7,8 @@ from django.views.decorators.cache import cache_control
 from warden.models import Profile, Granted_outpasses
 from doctor.models import Profile2, Granted_appointment
 from .render import Render
-from .render import Render_1
 from .models import DocumentForm
 from .models import Files
-from django.template import RequestContext
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.shortcuts import render_to_response
 
 
 class UserFormView(View):
@@ -120,6 +115,7 @@ def pdf(request,user_id):
 
     return Render.render('student/pdf.html', params)
 
+
 def book_appointment(request, user_id):
     if request.method == "GET":
         user = User.objects.get(pk=user_id)
@@ -142,7 +138,7 @@ def book_appointment(request, user_id):
         profile.date = request.POST.get('date')
         profile.full_name = request.POST.get('full_name')
         profile.save()
-        return render(request, 'student/book_appointment_page.html', {'user': user})
+        return render(request, 'student/appointment_requested_page.html', {'user': user})
 
 
 def back_appointment(request, user_id):
@@ -153,13 +149,14 @@ def back_appointment(request, user_id):
     permit.delete()
     return redirect('book_appointment', user_id)
 
+
 def pdf_appointment(request,user_id):
     user = User.objects.get(pk=user_id)
     permit = Granted_appointment.objects.get(username=user.username)
-    go=permit.full_name
     params = {
-        'full_name' : go,
+        'username' : permit.username,
+        'full_name' : permit.full_name,
         'date' : permit.date,
         'time': permit.time,
     }
-    return Render_1.render('student/pdf_appointment.html', params)
+    return Render.render('student/pdf_appointment.html', params)

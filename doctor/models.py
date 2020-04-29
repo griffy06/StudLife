@@ -10,6 +10,7 @@ class Profile2(models.Model):
     def __str__(self):
         return self.username
 
+
 class Granted_appointment(models.Model):
     username = models.CharField(max_length=100, default=None)
     full_name = models.CharField(max_length=100, default=None)

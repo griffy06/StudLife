@@ -25,7 +25,7 @@ class UserFormView(View):
 
 def logged_in(request):
     all_profiles = Profile2.objects.all()
-    return render(request, 'doctor/doctor_dashboard.html', {'all_profiles': all_profiles})
+    return render(request, 'doctor/doctor_page.html', {'all_profiles': all_profiles})
 
 
 def individual_request(request, profile_id):
