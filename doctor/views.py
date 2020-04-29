@@ -25,14 +25,17 @@ class UserFormView(View):
 
 def logged_in(request):
     all_profiles = Profile2.objects.all()
-    return render(request, 'doctor/doctor_page.html', {'all_profiles': all_profiles})
+    return render(request, 'doctor/doctor_dashboard.html', {'all_profiles': all_profiles})
 
+def show(request, user_id):
+    all_profiles = Profile2.objects.all()
+    return render(request,'doctor/doctor_page.html', {'all_profiles': all_profiles})
 
 def individual_request(request, profile_id):
     profile = Profile2.objects.get(pk=profile_id)
     user = User.objects.get(username=profile.username)
     if request.method == "GET":
-        return render(request, 'doctor/individual_request.html', {'profile': profile})
+        return render(request,'doctor/individual_request.html', {'profile': profile})
 
     else:
         if request.POST.get('allow') == "confirm":
@@ -51,4 +54,3 @@ def individual_request(request, profile_id):
             user.save()
             profile.delete()
             return redirect('doctor_logged_in')
-
