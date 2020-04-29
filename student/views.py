@@ -68,6 +68,22 @@ def outpass(request, user_id):
 def order_food(request, user_id):
     return render(request, 'student/order_food_page.html')
 
+def view_menu(request, user_id):
+    return render(request, 'student/menu.html')
+
+
+def fastfood(request, user_id):
+    return render(request,'student/fastfood.html')
+
+def fav(request, user_id):
+    return render(request,'student/menu.html')
+
+def maincourse(request, user_id):
+    return render(request,'student/maincourse.html')
+
+def refreshment(request, user_id):
+    return render(request,'student/refreshments.html')
+
 
 def digilocker(request, user_id):
     if request.method == 'POST':
