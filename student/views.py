@@ -176,6 +176,9 @@ def back_appointment(request, user_id):
     permit.delete()
     return redirect('book_appointment', user_id)
 
+def view_schedule(request, user_id):
+    user = User.objects.get(pk=user_id)
+    return render(request, 'student/schedule.html',{'user':user})
 
 def pdf_appointment(request,user_id):
     user = User.objects.get(pk=user_id)
