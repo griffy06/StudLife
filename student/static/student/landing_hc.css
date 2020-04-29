@@ -14,9 +14,9 @@ a:focus, a:hover { text-decoration: none; color: #f85759; }
 
 
 
-.page-header { background: url(images/wallpaper_c.jpg)no-repeat; position: relative; background-size: cover; }
+.page-header { background: url(images/wallpaper_h.jpg)no-repeat; position: relative; background-size: cover; }
 .page-caption { padding-top: 170px; padding-bottom: 174px; }
-.page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
+.page-title { font-size: 46px; line-height: 1; color: black; font-weight: 600; text-align: center; }
 
 .card-section { position: relative; bottom: 60px; }
 .card-block { padding: 80px; }
@@ -89,15 +89,15 @@ body{
   transition: all .5s;
 }
 
-.btn-white::after {
-    background: #ffe0ac;
-
-}
-
-/* .btn-white::after {*/
-/*    background: #588da8;*/
+/*.btn-white::after {*/
+/*    background: #ffe0ac;*/
 
 /*}*/
+
+ .btn-white::after {
+    background: #588da8;
+
+}
 
 .btn-animation-1:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
