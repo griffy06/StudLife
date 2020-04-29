@@ -3,6 +3,7 @@ from django.views.generic import View
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
 from .models import Profile, Granted_outpasses
+from django.contrib.auth import logout
 
 
 class UserFormView(View):
@@ -25,6 +26,11 @@ class UserFormView(View):
 
 
 def logged_in(request):
+
+    return render(request, 'warden/warden_dashboard.html')
+
+
+def view_requests(request):
     all_profiles = Profile.objects.all()
     return render(request,'warden/warden_page.html',{'all_profiles': all_profiles})
 
@@ -51,9 +57,18 @@ def individual_request(request, profile_id):
             user.student.outpass = 2
             user.save()
             profile.delete()
-            return redirect('warden_logged_in')
+            return redirect('view_requests')
         else:
             user.student.outpass = 3
             user.save()
             profile.delete()
-            return redirect('warden_logged_in')
+            return redirect('view_requests')
+
+
+def warden_logout(request):
+    logout(request)
+    return redirect('index')
+
+
+def warden_edit_profile(request):
+    return render(request, 'warden/warden_edit_profile_page.html')

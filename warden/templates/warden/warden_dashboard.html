@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
@@ -277,33 +278,43 @@
         .menu:focus .smartphone-menu-trigger {
           pointer-events: none;
         }
+
       }
+    a.dashboard{
+        display: block;
+        color: white;
+    }
+    a.dashboard:hover{
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
 </style>
 <body>
 <!-- partial:index.partial.html -->
 <nav class="menu" tabindex="0">
 	<div class="smartphone-menu-trigger"></div>
   <header class="avatar">
-    <img src="01.jpg" />
+    <img src="{% static 'warden/images/01.jpg' %}" />
     <h2>Warden</h2>
   </header>
 	<ul>
-    <li tabindex="0" class="icon-home"><span>Home</span></li>
-    <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
-    <li tabindex="0" class="icon-profile"><span>Edit Profile</span></li>
-    <li tabindex="0" class="icon-customers"><span>About</span></li>
-    <li tabindex="0" class="icon-users"><span>Developers</span></li>
-    <li tabindex="0" class="icon-signo"><span>Sign Out</span></li>
+        <li tabindex="0" class="icon-home"><a href="{% url 'index' %}" class="dashboard"><span>Home</span></a></li>
+        <li tabindex="0" class="icon-profile"><a href="{% url 'warden_edit_profile' %}" class="dashboard"><span>Edit Profile</span></a></li>
+        <li tabindex="0" class="icon-customers"><a href="{% url 'about' %}" class="dashboard"><span>About</span></a></li>
+        <li tabindex="0" class="icon-users"><a href="{% url 'developers' %}" class="dashboard"><span>Developers</span></a></li>
+    <li tabindex="0" class="icon-signo"><a href="{% url 'warden_logout' %}" class="dashboard"><span>Sign Out</span></a> </li>
   </ul>
 </nav>
 
 <main>
   <div class="outpass">
+      <form action="{% url 'view_requests' %}" method="get">
      <span>Outpass Requests<span>
        <br>
        <br>
        <br>
-      <button type="button" class="btn btn-success" id="pp">View</button>
+      <button type="submit" class="btn btn-success" id="pp">View</button></form>
   </div>
   <!-- <div class="appointment">
     <span>Past Records<span>
