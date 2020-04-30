@@ -48,12 +48,12 @@ def individual_request(request, profile_id):
             user.student.appointments = 2
             user.save()
             profile.delete()
-            return redirect('doctor_logged_in')
+            return redirect('show')
         else:
             user.student.appointments = 3
             user.save()
             profile.delete()
-            return redirect('doctor_logged_in')
+            return redirect('show')
 
 
 def doctor_logout(request):
