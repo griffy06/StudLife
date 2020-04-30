@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
@@ -310,7 +311,7 @@
 <nav class="menu" tabindex="0">
 	<div class="smartphone-menu-trigger"></div>
   <header class="avatar">
-    <img src="01.jpg" />
+    <img src="{%  static 'doctor/images/doctor.jpg' %}" />
     <h2>{{ user.username }}</h2>
   </header>
 	<ul>
@@ -336,17 +337,7 @@
       <br>
        <br>
       <button type="submit" class="btn btn-success">View</button></form>
-
-<!-- <div class="locker">
-  <span>Digilocker<span>
-    <br>
-       <br>
-       <br>
-   <button type="button" class="btn btn-success">Go</button>
-</div> -->
-  <!-- <div class="helper">
-		<span>Request Outpass</span>
-  </div> -->
+      </div>
 </main>
 <!-- partial -->
   <script  src="./script.js"></script>
