@@ -123,9 +123,12 @@ def back_outpass(request, user_id):
     user = User.objects.get(pk=user_id)
     user.student.outpass = 0
     user.save()
-    permit = Granted_outpasses.objects.get(username=user.username)
-    permit.delete()
-    return redirect('outpass', user_id)
+    try:
+        permit = Granted_outpasses.objects.get(username=user.username)
+        permit.delete()
+        return redirect('outpass', user_id)
+    except Granted_outpasses.DoesNotExist:
+        return redirect('outpass', user_id)
 
 
 def pdf(request,user_id):
@@ -174,9 +177,13 @@ def back_appointment(request, user_id):
     user = User.objects.get(pk=user_id)
     user.student.appointments = 0
     user.save()
-    permit = Granted_appointment.objects.get(username=user.username)
-    permit.delete()
-    return redirect('book_appointment', user_id)
+    try:
+        permit = Granted_appointment.objects.get(username=user.username)
+        permit.delete()
+        return redirect('book_appointment', user_id)
+    except Granted_appointment.DoesNotExist:
+        return redirect('book_appointment', user_id)
+
 
 def view_schedule(request, user_id):
     user = User.objects.get(pk=user_id)
