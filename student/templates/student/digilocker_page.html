@@ -277,7 +277,7 @@ ul{
 </div>
 <div class="centerr" id="file">
 <p align="center"><img src="{% static 'student/images/file-transfer.gif' %}" height="200" /></p>
-<h2 align="center">Hey {{ user.first_name }}, your files are safe with DIGILOCKER!</h2>
+<h2 align="center">Your files are safe with DIGILOCKER!</h2>
 <br><br>
     {% if files %}
         <ul>
@@ -289,7 +289,7 @@ ul{
         {% endfor %}
         </ul>
     {% else %}
-        <h2 align="center"><br><br>No Documents</h2>
+        <h2 align="center"><br><br>No Documents. Let's add some!</h2>
     {% endif %}
 <form action="#upload">
  <p align="center"><button type="submit" class="btn btn-primary btn-lg btn-block active" > <i class="fa fa-cloud-upload"></i>Click here to add files to digilocker!</button></p></form>
