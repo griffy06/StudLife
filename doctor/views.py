@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth.models import User, Group
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import Profile2, Granted_appointment
 
 class UserFormView(View):
@@ -27,7 +27,7 @@ def logged_in(request):
     all_profiles = Profile2.objects.all()
     return render(request, 'doctor/doctor_dashboard.html', {'all_profiles': all_profiles})
 
-def show(request, user_id):
+def show(request):
     all_profiles = Profile2.objects.all()
     return render(request,'doctor/doctor_page.html', {'all_profiles': all_profiles})
 
@@ -54,3 +54,12 @@ def individual_request(request, profile_id):
             user.save()
             profile.delete()
             return redirect('doctor_logged_in')
+
+
+def doctor_logout(request):
+    logout(request)
+    return redirect('index')
+
+
+def doctor_edit_profile(request):
+    return render(request, 'doctor/doctor_edit_profile.html')

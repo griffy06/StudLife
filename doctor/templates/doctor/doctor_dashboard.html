@@ -305,6 +305,15 @@
           pointer-events: none;
         }
       }
+    a.dashboard{
+        color: white;
+        display: block;
+    }
+    a.dashboard:hover{
+        color: white;
+        display: block;
+        text-decoration: none;
+    }
 </style>
 <body>
 <!-- partial:index.partial.html -->
@@ -312,14 +321,16 @@
 	<div class="smartphone-menu-trigger"></div>
   <header class="avatar">
     <img src="{%  static 'doctor/images/doctor.jpg' %}" />
-    <h2>{{ user.username }}</h2>
+    <h2>HC Executive</h2>
   </header>
 	<ul>
-    <li tabindex="0" class="icon-home"><span>Home</span></li>
-    <li tabindex="0" class="icon-profile"><span>Edit Profile</span></li>
-    <li tabindex="0" class="icon-customers"><span>About</span></li>
-    <li tabindex="0" class="icon-users"><span>Developers</span></li>
-    <li tabindex="0" class="icon-signo"><span>Sign Out</span></li>
+        <a class="dashboard" href="{% url 'index' %}">
+            <li tabindex="0" class="icon-home"><span>Home</span></li></a>
+            <a class="dashboard" href="{% url 'doctor_edit_profile' %}"><li tabindex="0" class="icon-profile"><span>Edit Profile</span></li></a>
+            <a class="dashboard" href="{% url 'about' %}"><li tabindex="0" class="icon-customers"><span>About</span></li></a>
+            <a class="dashboard" href="{% url 'developers' %}"><li tabindex="0" class="icon-users"><span>Developers</span></li></a>
+            <a class="dashboard" href="{% url 'doctor_logout' %}"><li tabindex="0" class="icon-signo"><span>Sign Out</span></li></a>
+
   </ul>
 </nav>
 
@@ -332,7 +343,7 @@
       <button type="button" class="btn btn-danger">Edit</button>
   </div>
   <div class="appointment">
-      <form action="{% url 'show' user.id%}" method="get">
+      <form action="{% url 'show' %}" method="get">
       <span>Appointment Requests</span>
       <br>
        <br>

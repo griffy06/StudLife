@@ -47,8 +47,8 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <!-- section-title -->
-                        <div class="section-title mb-0" >
-                            <h2> Welcome {{ user.username }}, we are here to heal and care!</h2>
+                        <div class="section-title mb-0" ><center>
+                            <h2> Welcome {{ user.username }}, we are here to heal and care!</h2></center>
                         </div>
                     </div>
                 </div>
@@ -59,14 +59,14 @@
 
 <div class="box">
 {#    <form action="{% url 'view_menu' user.id %}" method="get">#}
-    <a href="{% url 'view_schedule' user.id %}" class="btn btn-white btn-animation-1" ><div class="hospi">
+    <a href="{% url 'view_schedule' user.id %}" class="btn btn-white btn-animation-1" style="margin-top: 170px"><div class="hospi">
         <h6> View Schedule</h6>
         </div>
     </a>
 
 <br>
     <br>
-    <a href="{% url 'book_appointment' user.id %}" class="btn btn-white btn-animation-1"><h6> Book An Appointment</h6></a>
+    <a href="{% url 'book_appointment' user.id %}" class="btn btn-white btn-animation-1" style="margin-top: 20px; margin-bottom: 30px"><h6> Book An Appointment</h6></a>
 
 </div>
 
