@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>StudLife</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+       <style>
+           BODY {
+    font-family: Trebuchet MS;
+    margin:20px;
+    background-color: #FFFFFF;
+
+  }
+
+  H1 {
+    text-align: center;
+    color: #000000;
+  }
+  .myTimetable TBODY .time{
+      font-size: 12px;
+      width: 100%;
+  }
+  .myTimetable {
+    width:100%;
+    /* border-collapse: collapse; */
+    table-layout: fixed;
+    border-radius: 10px;
+    padding: 100px;
+  }
+
+  .myTimetable THEAD{
+    color: #FFFFFF;
+
+  }
+/*
+  .myTimetable TBODY  {
+    background-color: #ffd7a4;
+    padding: 10px;
+    border-radius: 10px;
+    /* border-style: outset;
+    border-width: 5px;
+    border-style: dotted;
+  } */
+  .myTimetable tbody .hd{
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 10px;
+    border-color:white;
+    /* border-style: groove; */
+    background-color: #ff7a7a;
+  }
+  .myTimetable TBODY .kaush{
+    background-color:#90d2d8;
+   /* padding:100px; */
+   border-radius: 10px;
+   /* border-style: outset; */
+   border-width: 5px;
+   border-style: dotted;
+  }
+  .myTimetable TBODY .vivek{
+    background-color:#ffd7a4;
+   /* padding:100px; */
+   border-radius: 10px;
+   /* border-style: outset; */
+   border-width: 10px;
+   border-style: none;
+  }
+  .myTimetable TBODY .yasha{
+    background-color:#fff3cd;
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 5px;
+    border-style: dotted;
+  }
+  .myTimetable TBODY .kanchan{
+    background-color:#b9d2be ;
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 5px;
+    border-style: dotted;
+  }
+  .myTimetable TBODY .prit{
+    background-color:#249db0;
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 5px;
+    border-style: dotted;
+    /* #f6f5cc; */
+  }
+  .myTimetable TBODY .aks{
+    background-color:#dbc5ba;
+    border-radius: 10px;
+    /* border-style: outset; */
+    border-width: 5px;
+    border-style: dotted;
+  }
+
+  .myTimetable TD {
+    border: 3px white;
+    padding: 20px;
+    text-align: center;
+  }
+  .myTimetable TBODY TR TD:first-child {
+
+    /* border-style: dashed; */
+    border-style: double;
+    border-spacing: 10px;
+    background-color:#fff0f6;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 50px;
+
+  }
+  .day{
+      font-size: 20px;
+      font-style: bold;
+      font-family: sans-serif;
+  }
+  .break, .lunch {
+    background-color: #bbd8c6 ;
+    font-style: italic;
+  }
+
+  .subject {
+    font-size: 14pt;
+    font-style: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* color: red; */
+    margin-bottom:4px;
+  }
+
+  .room {
+    font-size: 10pt;
+    font-style: italic;
+  }
+  .myTimetable TBODY .hd{
+      font-size: 14px;
+  }
+            img{
+                height: 200px;
+                width: 200px;
+            }
+            .thumbnail img{
+    width: 100%;
+}
+.thumbnail .caption-full{
+
+    padding: 9px;
+}
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar navbar-default">
+              <div class="container">
+                  <!-- <img src="#" > -->
+                    <h1>HEALTH CENTER SCHEDULE</h1>
+          </div>
+          </nav>
+          </header>
+          <div class="container" class="m-5 pb-5 bg-info">
+<TABLE class="myTimetable"> 
+  <THEAD>
+    <TR>
+      <TH></TH>
+      <TH>Monday</TH>
+      <TH>Tuesday</TH>
+      <TH>Wednesday</TH>
+      <TH>Thursday</TH>
+      <TH>Friday</TH>     
+    </TR>
+  </THEAD>
+  <TBODY>
+    <TR>
+        
+        <TD class="hd"><div class="day">Morning</div>
+         <div class="time"> 8am to 10am </div>   </TD>
+      <TD class="kaush">
+        <div class="subject">Dr. Kaushlesh </div>
+        <div class="room">OPD1</div>
+      </TD>
+      <TD class="yasha">
+        <div class="subject">Dr.Yashashwini</div>
+        <div class="room">OPD2</div>
+      </TD>
+      <TD class ="prit">        
+        <div class="subject">Dr. Pritima</div>
+        <div class="room">OPD3</div>
+      </TD>
+      <TD class="kanchan">        
+        <div class="subject">Dr.Kanchan Mishra
+        </div>
+        <div class="room">OPD4</div>
+      </TD>
+       <TD class="aks">        
+         <div class="subject">Dr. A.K. Singh</div>
+        <div class="room">OPD1</div>
+      </TD>     
+    </TR>
+    <TR>
+        <TD class="hd"><div class="day">Morning</div>
+            <div class="time">10am to 2pm </div>   </TD>
+      <TD class="prit">        
+        <div class="subject">Dr. Pritima</div>
+        <div class="room">OPD1</div>
+      </TD>
+      <TD class="vivek">        
+        <div class="subject">Dr. Vivek</div>
+        <div class="room">OPD5</div>
+      </TD>
+      <TD class="kaush">        
+        <div class="subject">Dr. Kaushlesh</div>
+        <div class="room">OPD1</div>
+      </TD>
+      <TD class="aks">        
+        <div class="subject">Dr. A.K. Singh</div>
+        <div class="room">OPD3</div>
+      </TD>
+      <TD class="yasha">        
+        <div class="subject">Dr. Yashashwini</div>
+        <div class="room">OPD2</div>
+      </TD>
+    </TR>
+      <!-- <TR>
+      <TD colspan="6" class="break">Break</TD>
+      </TR> -->
+      <TR>
+        <TD class="hd"><div class="day">Afternoon</div>
+            <div class="time"> 3pm to 5pm </div>   </TD>
+       
+      <TD class="aks">        
+        <div class="subject">Dr. A. K. Singh</div>
+        <div class="room">OPD1</div>
+      </TD>
+      <TD class="kaush">        
+        <div class="subject">Dr. Kaushlesh</div>
+        <div class="room">OPD2</div>
+      </TD>
+      <TD class="prit">        
+        <div class="subject">Dr. Pritima</div>
+        <div class="room">OPD3</div>
+      </TD>
+      <TD class="vivek">        
+        <div class="subject">Dr. Vivek</div>
+        <div class="room">OPD4</div>
+      </TD>
+      <TD class="kanchan">        
+        <div class="subject">Dr. Kanchan Mishra</div>
+        <div class="room">OPD5</div>
+      </TD>
+    </TR>
+      <!-- <TR>
+      <TD colspan="6" class="lunch">Lunch</TD>
+    </TR> -->
+      <TR>
+        <TD class="hd"><div class="day">Evening</div>
+            <div class="time"> 6pm to 9pm </div>   </TD>
+       
+      <TD class="kaush">        
+        <div class="subject">Dr. Kaushlesh</div>
+        <div class="room">OPD5</div>
+      </TD>
+      <TD class="prit">        
+        <div class="subject">Dr. Pritima</div>
+        <div class="room">OPD1</div>
+      </TD>
+      <TD class="aks">       
+        <div class="subject">Dr. A. K. Singh</div>
+        <div class="room">OPD4</div>
+      </TD>
+      <TD class="yasha">        
+        <div class="subject">Dr. Yashashwini </div>
+        <div class="room">OPD2</div>
+      </TD>
+      <TD class="vivek">        
+        <div class="subject">Dr.Vivek </div>
+        <div class="room">OPD3</div>
+      </TD>
+    </TR>
+      <TR>
+        <TD class="hd"><div class="day">Night</div>
+            <div class="time"> 9pm to 11pm </div>   </TD>
+       
+      <TD class="vivek">        
+        <div class="subject">Dr. Vivek</div>
+        <div class="room">OPD1</div>
+      </TD>
+      <TD class="yasha">        
+        <div class="subject">Dr. Yashashwini</div>
+        <div class="room">OPD4</div>
+      </TD>
+      <TD class="prit">        
+        <div class="subject">Dr. Pritima</div>
+        <div class="room">OPD3</div>
+      </TD>
+      <TD class="kanchan">        
+        <div class="subject">Dr. Kanchan Mishra</div>
+        <div class="room">OPD5</div>
+      </TD>
+      <TD class="kaush">        
+        <div class="subject">Dr. Kaushlesh </div>
+        <div class="room">OPD2</div>
+      </TD>
+    </TR>
+   </TBODY>
+  </TABLE>
+</div>
+  </body>
+  </html>

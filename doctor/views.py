@@ -63,3 +63,7 @@ def doctor_logout(request):
 
 def doctor_edit_profile(request):
     return render(request, 'doctor/doctor_edit_profile.html')
+
+
+def doctor_view_schedule(request):
+    return render(request, 'doctor/schedule.html')

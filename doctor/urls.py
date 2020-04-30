@@ -8,4 +8,5 @@ urlpatterns = [
     path('viewlist/<int:profile_id>/', views.individual_request, name="doctor_individual_request"),
     path('edit_profile/', views.doctor_edit_profile, name="doctor_edit_profile"),
     path('logout/', views.doctor_logout, name="doctor_logout"),
+    path('view_schedule/', views.doctor_view_schedule, name="doctor_view_schedule")
 ]
