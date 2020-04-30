@@ -34,6 +34,8 @@
 
                <h1>STUDLIFE NIGHT CANTEEN</h1>
              </div>
+                        <div><a class="btn btn-info btn-lg" href="{% url 'cart' user.id%}" role="button" style="height:30px;width:80px;float: right;">View cart</a></div>
+
              </div>
              </nav>
              <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -67,10 +69,10 @@
               </h4>
 
 		  </ul>
-               </div> 
+               </div>
              </nav>
              <!-- </nav> -->
-           
+
            </header>
 
 <div class="container" class="m-5 pb-5 bg-info">
@@ -83,103 +85,119 @@
       <img src="{% static 'student/images/alooparatha.jpeg'%}" >
       <div class="caption">
         <h4> Aloo Paratha </h4>
-        <h5> Rs.10</h5> 
-      </div>  
+        <h5> Rs.10</h5>
+          <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=9 val=3%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=9 val=3%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-    
 
-      
-        
-  </div>  
+
+
+
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/aloopyaaz.jpg'%}">
       <div class="caption">
-        <h4> Aloo Pyaaz Paratha </h4> 
-        <h5> Rs.12</h5> 
-      </div>  
+        <h4> Aloo Pyaaz Paratha </h4>
+        <h5> Rs.12</h5>
+          <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=2 val=3%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=2 val=3%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/vegrice.jpeg'%}">
       <div class="caption">
-        <h4> Fried Rice (Veg) </h4> 
-        <h5> Rs.20</h5> 
-      </div>  
+        <h4> Fried Rice (Veg) </h4>
+        <h5> Rs.20</h5>
+          <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=10 val=3%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=10 val=3%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/eggrice.jpg'%}">
       <div class="caption">
-        <h4> Egg rice </h4> 
-        <h5> Rs.30</h5> 
-      </div>  
+        <h4> Egg rice </h4>
+        <h5> Rs.30</h5>
+          <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=11 val=3%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=11 val=3%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/chirice.jpg'%}">
       <div class="caption">
-        <h4> Chicken Rice </h4> 
-        <h5> Rs. 50</h5> 
-      </div>  
+        <h4> Chicken Rice </h4>
+        <h5> Rs. 50</h5>
+          <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=12 val=3%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=12 val=3%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/eggburji.JPG'%}">
       <div class="caption">
-        <h4> Egg Bhurji and 4 Paratha</h4> 
-        <h5> Rs.35</h5> 
-      </div>  
+        <h4> Egg Bhurji and 4 Paratha</h4>
+        <h5> Rs.35</h5>
+          <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=13 val=3%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=13 val=3%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
+  </div>
 
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/paneerparatha.jpg'%}">
       <div class="caption">
-        <h4> Paneer Paratha </h4> 
-        <h5> Rs.20</h5> 
-      </div>  
+        <h4> Paneer Paratha </h4>
+        <h5> Rs.20</h5>
+          <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=7 val=3%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=7 val=3%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/puro.jpeg'%}">
       <div class="caption">
-        <h4>Chhole Puri </h4> 
-        <h5> Rs.30</h5> 
+        <h4>Chhole Puri </h4>
+        <h5> Rs.30</h5>
+          <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=14 val=3%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=14 val=3%}" role="button" style="float: right; margin-top: -10px">Remove </a>
       </div>  
 
         <p>

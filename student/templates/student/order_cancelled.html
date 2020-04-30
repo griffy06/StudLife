@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order_cancelled</title>
+</head>
+<body>
+Sorry, your order has been cancelled
+<form action="{% url 'back_order' user.id %}">
+    <button type="submit">Order again!</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cart</title>
+</head>
+<body>
+following items are in the cart:
+{% for item in food %}
+    {% for obj in food_item %}
+        {% if obj.id == item.food_id %}
+            <li>{{ obj.name }} {{ item.quantity }}</li>
+        {% endif %}
+     {% endfor %}
+{% endfor %}
+<form action="{% url 'place_order' user.id %}"><button type="submit">Order food</button> </form>
+<form action="{% url 'fav' user.id %}"><button type="submit">Add more items</button> </form>
+</body>
+</html>

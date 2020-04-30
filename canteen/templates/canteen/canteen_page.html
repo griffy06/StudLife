@@ -1,0 +1,21 @@
+{% if all_profiles %}
+    <div class="container"><h5>Following are the order requests:<br></h5></div>
+<div class="list-group" style="margin-top: 60px; margin-left: 80px;margin-right: 500px">
+{% for profile in all_profiles %}
+    {% if profile.order_status == 0 %}
+    <a href="{% url 'canteen_individual_order' profile.id %}" class="list-group-item list-group-item-action" id="pp">{{ profile.username }}</a>
+    {% endif %}
+
+{% endfor %}
+</div>
+  <div>
+  <h5>Following are the accepted orders not yet prepared</h5>
+  {% for profile in all_profiles %}
+  {% if profile.order_status == 1 %}
+        <a href="{% url 'update_status' profile.id %}" class="list-group-item list-group-item-action" id="pp">{{ profile.username }} </a>
+    {% endif %}
+  {% endfor %}
+  </div>
+{% else %}
+<div class="container" style="text-align: center;margin-top:40px;"><h2>No orders!</h2></div>
+{% endif %}

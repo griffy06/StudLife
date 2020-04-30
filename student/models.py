@@ -33,3 +33,9 @@ class DocumentForm(forms.Form):
         label='Select a file',
         help_text='max. 42 megabytes'
     )
+
+
+class Order(models.Model):
+    username = models.CharField(max_length=100)
+    food_id = models.IntegerField(default=None)
+    quantity = models.IntegerField(default=None)

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>order prepared</title>
+</head>
+<body>
+Your order has been prepared. Go and collect it!
+<form action="{% url 'back_order' user.id %}">
+    <button type="submit">Got it!</button>
+</form>
+</body>
+</html>

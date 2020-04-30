@@ -33,14 +33,16 @@
 	  <div class="container">
 		  <!-- <img src="#" > -->
       <h1>STUDLIFE NIGHT CANTEEN</h1>
+
     </div>
+        <div><a class="btn btn-info btn-lg" href="{% url 'cart' user.id%}" role="button" style="height:30px;width:80px;float: right;">View cart</a></div>
     </div>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <h3>
           <a class="navbar-brand" href="#">Navbar</a>
       </h3>
-       
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -68,7 +70,7 @@
               </h4>
 
 		  </ul>
-      </div> 
+      </div>
     </nav>
     </header>
 
@@ -82,60 +84,71 @@
       <img src="{% static 'student/images/tea.jpg'%}" height="200" width="300">
       <div class="caption">
         <h4> Tea </h4>
-        <h5> Rs.10</h5> 
-      </div>  
+        <h5> Rs.10</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=1 val=4%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=1 val=4%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-    
 
-      
-        
-  </div>  
+
+
+
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/coffee.jpg'%}">
       <div class="caption">
-        <h4> Coffee</h4> 
-        <h5> Rs.12</h5> 
-      </div>  
+        <h4> Coffee</h4>
+        <h5> Rs.12</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=19 val=4%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=19 val=4%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/masalacolddrink.jpg'%}">
       <div class="caption">
-        <h4> Masala Colddrink </h4> 
-        <h5> Rs.15</h5> 
-      </div>  
+        <h4> Masala Colddrink </h4>
+        <h5> Rs.15</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=20 val=4%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=20 val=4%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
+  </div>
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="thumbnail">
       <img src="{% static 'student/images/colddrink.jpg'%}">
       <div class="caption">
-        <h4> Colddrink  (1 glass) </h4> 
-        <h5> Rs.12</h5> 
-      </div>  
+        <h4> Colddrink  (1 glass) </h4>
+        <h5> Rs.12</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=21 val=4%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=21 val=4%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
+      </div>
 
         <p>
           <!-- <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a> -->
         </p>
     </div>
-  </div>  
-  
+  </div>
 
-  
+
   
 
 
