@@ -24,5 +24,7 @@ urlpatterns = [
     path('<int:user_id>/order_food/back_order', views.back_order, name='back_order'),
     path('<int:user_id>/order_food/place_order', views.place_order, name='place_order'),
     path('<int:user_id>/order_food/cart', views.cart, name='cart'),
+    path('hc/<int:user_id>', views.hc, name='hc'),
+    path('hcSchedule/<int:user_id>', views.view_schedule, name='view_schedule'),
 
 ]
