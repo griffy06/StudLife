@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -387,22 +388,30 @@
           pointer-events: none;
           
         }
-      }  
+      }
+    a.dashboard{
+        color: white;
+        display: block;
+    }
+    a.dashboard:hover{
+        color: white;
+        display: block;
+        text-decoration: none;
+    }
     </style>
 <body>
     <nav class="menu" tabindex="0">
         <div class="smartphone-menu-trigger"></div>
         <header class="avatar">
-            <img src="01.png" />
-            <h2>Warden</h2>
+            <img src="{% static 'student/images/01.jpg' %}" />
+            <h2>{{ user.username }}</h2>
         </header>
-        <ul>
-            <li tabindex="0" class="icon-home"><span>Home</span></li>
-            <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
-            <li tabindex="0" class="icon-profile"><span>Edit Profile</span></li>
-            <li tabindex="0" class="icon-customers"><span>About</span></li>
-            <li tabindex="0" class="icon-users"><span>Developers</span></li>
-            <li tabindex="0" class="icon-signo"><span>Sign Out</span></li>
+        <ul><a class="dashboard" href="{% url 'index' %}">
+            <li tabindex="0" class="icon-home"><span>Home</span></li></a>
+            <a class="dashboard" href="{% url 'student_edit_profile' user.id %}"><li tabindex="0" class="icon-profile"><span>Edit Profile</span></li></a>
+            <a class="dashboard" href="{% url 'about' %}"><li tabindex="0" class="icon-customers"><span>About</span></li></a>
+            <a class="dashboard" href="{% url 'developers' %}"><li tabindex="0" class="icon-users"><span>Developers</span></li></a>
+            <a class="dashboard" href="{% url 'logout_student' user.id %}"><li tabindex="0" class="icon-signo"><span>Sign Out</span></li></a>
         </ul>
     </nav>
     <main>
