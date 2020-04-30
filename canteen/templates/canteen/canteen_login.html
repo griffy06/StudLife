@@ -96,6 +96,7 @@ body {
 <!-- partial:index.partial.html -->
 <!-- multistep form -->
 <form id="msform" action="" method="post">
+    {% csrf_token %}
   <!-- progressbar -->
   <!-- <ul id="progressbar">
     <li class="active">Account Setup</li>
@@ -106,8 +107,8 @@ body {
   <fieldset>
     <h2 class="fs-title">Log In</h2>
     <h3 class="fs-subtitle"></h3>
-    <input type="text" name="email" placeholder="Email" />
-    <input type="password" name="pass" placeholder="Password" />
+    <input type="text" name="username" id="username" class="form-control" placeholder="Email" />
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
     <!-- <input type="password" name="cpass" placeholder="Confirm Password" /> -->
     <input type="submit" name="login" class="submit action-button" value="Log In" />
   </fieldset>

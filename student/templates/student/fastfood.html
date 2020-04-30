@@ -35,6 +35,8 @@
 
 		<h1>STUDLIFE NIGHT CANTEEN</h1>
   </div>
+             <div><a class="btn btn-info btn-lg" href="{% url 'cart' user.id%}" role="button" style="height:30px;width:80px;float: right;">View cart</a></div>
+
   </div>
 	</nav>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -97,7 +99,10 @@
       <img src="{% static 'student/images/maggi.jpeg'%}">
       <div class="caption">
         <h4> Maggi (Plain) </h4> 
-        <h5> Rs.25</h5> 
+        <h5> Rs.25</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=4 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=4 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
       </div>  
 
         <p>
@@ -110,7 +115,10 @@
       <img src="{% static 'student/images/eggmaggi.jpeg'%}" >
       <div class="caption">
         <h4> Egg Maggi </h4>
-        <h5> Rs.30</h5> 
+        <h5> Rs.30</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=15 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=15 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
       </div>  
 
         <p>
@@ -123,7 +131,10 @@
           <img src="{% static 'student/images/cheesemaggi.jpeg'%}">
           <div class="caption">
             <h4> Cheese Maggi </h4> 
-            <h5> Rs.30</h5> 
+            <h5> Rs.30</h5>
+                        <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=16 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=16 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
           </div>  
     
             <p>
@@ -137,7 +148,10 @@
           <img src="{% static 'student/images/macroni.jpg'%}">
           <div class="caption">
             <h4> Macaroni (Veg) </h4> 
-            <h5> Rs.25</h5> 
+            <h5> Rs.25</h5>
+                        <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=3 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=3 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
           </div>  
     
             <p>
@@ -154,7 +168,10 @@
       <img src="{% static 'student/images/eggmaca.jpg'%}">
       <div class="caption">
         <h4> Egg Macaroni </h4> 
-        <h5> Rs.30</h5> 
+        <h5> Rs.30</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=17 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=17 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
       </div>  
 
         <p>
@@ -168,7 +185,10 @@
       <img src="{% static 'student/images/vegroll.jpeg'%}">
       <div class="caption">
         <h4> Roll (Veg) </h4> 
-        <h5> Rs.25</h5> 
+        <h5> Rs.25</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=8 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=8 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
       </div>  
 
         <p>
@@ -181,7 +201,10 @@
       <img src="{% static 'student/images/chiroll.jpeg'%}">
       <div class="caption">
         <h4> Chicken Roll </h4> 
-        <h5> Rs.45</h5> 
+        <h5> Rs.45</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=6 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=6 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
       </div>  
 
         <p>
@@ -195,7 +218,10 @@
       <img src="{% static 'student/images/paneerroll.jpg'%}">
       <div class="caption">
         <h4> Paneer Roll </h4> 
-        <h5> Rs.30</h5> 
+        <h5> Rs.30</h5>
+                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=18 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
+          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=18 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+
       </div>  
 
         <p>

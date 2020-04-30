@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order confirmation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cookie|Lobster|Satisfy&display=swap" rel="stylesheet">
+</head>
+<body>
+<div style="text-align: center;margin-top: 50px;text-decoration: underline"><h4>Order for {{ profile.username }}</h4></div>
+<div class="container" style="margin-top:5%;">
+<form action="{% url 'canteen_individual_order' profile.id %}" method="post">
+    {% csrf_token %}
+    {% for food in order %}
+        {% if food.username == profile.username %}
+            {% for item in food_item %}
+                {% if item.id == food.food_id %}
+                    <li>{{ item.name }} {{ food.quantity }}</li>
+                 {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    <div class="form-check">
+  <input class="form-check-input" type="radio" name="allow" value="confirm" checked>Confirm Order
+
+<br>
+<!--<div class="form-check">-->
+  <input class="form-check-input" type="radio" name="allow" value="decline">Decline Order
+
+</div>
+    <br><br>&nbsp&nbsp&nbsp
+  <button type="submit" class="btn btn-info">Okay</button>
+</form>
+</div>
+<div style="margin-bottom: 50px"></div>
+</body>
+</html>
