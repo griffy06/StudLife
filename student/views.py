@@ -28,11 +28,14 @@ class UserFormView(View):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        userGroup = Group.objects.get(user=user).name
-        if user is not None and userGroup=='students':
-            login(request, user)
-            return redirect('logged_in', user.id)
-        else:
+        try:
+            userGroup = Group.objects.get(user=user).name
+            if user is not None and userGroup=='students':
+                login(request, user)
+                return redirect('logged_in', user.id)
+            else:
+                return render(request, self.template_name)
+        except Group.DoesNotExist:
             return render(request, self.template_name)
 
 
