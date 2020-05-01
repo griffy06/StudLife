@@ -12,6 +12,9 @@ from .models import Files, Order
 from django.contrib.auth import logout
 from canteen.models import Profile3
 from canteen.models import Food_item
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
 
 
 class UserFormView(View):
@@ -206,9 +209,7 @@ def logout_student(request,user_id):
     return redirect('index')
 
 
-def student_edit_profile(request, user_id):
-    user = User.objects.get(pk=user_id)
-    return render(request, 'student/edit_profile_page.html', {'user': user})
+
 
 
 def order_food(request, user_id):
@@ -318,3 +319,24 @@ def place_order(request, user_id):
     profile.order_status=0
     profile.save()
     return render(request,'student/order_requested.html', {'user':user})
+
+
+def student_edit_profile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    if request.method == 'GET':
+        return render(request, 'student/edit_profile_page.html', {'user': user})
+    else:
+        if request.POST.get('first_name'):
+            user.first_name=request.POST.get('first_name')
+            user.save()
+        if request.POST.get('last_name'):
+            user.last_name=request.POST.get('last_name')
+            user.save()
+        if request.POST.get('email'):
+            user.email=request.POST.get('email')
+            user.save()
+        if request.POST.get('password'):
+            password=request.POST.get('password')
+            user.set_password(password)
+            user.save()
+        return redirect('logged_in', user_id)

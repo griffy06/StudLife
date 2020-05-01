@@ -371,9 +371,10 @@
             <div style="text-align: center;margin-top: 0px;margin-bottom:5%">
                 <h3>Order for<span style="color:rgb(146, 250, 146);"> {{ profile.username }}</span></h3>
             </div>
+
+            <form action="{% url 'canteen_individual_order' profile.id %}" method="post">
             <table width="80%" style="margin-left: 10%; text-align:center;margin-bottom:3%;">
                 <tr><th>ITEM</th><th>QUANTITY</th></tr>
-            <form action="{% url 'canteen_individual_order' profile.id %}" method="post">
                 {% csrf_token %}
                 {% for food in order %}
                 {% if food.username == profile.username %}
@@ -381,12 +382,12 @@
                 {% if item.id == food.food_id %}
                 
                 <li style="list-style-type: none;"><tr><td>{{ item.name }}</td><td> {{ food.quantity }}</td></tr></li>
-               </table>
+
                 {% endif %}
                 {% endfor %}
                 {% endif %}
                 {% endfor %}
-            
+            </table>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="allow" id="co" value="confirm" checked><h6>Confirm Order</h6>
 

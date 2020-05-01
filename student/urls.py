@@ -27,4 +27,5 @@ urlpatterns = [
     path('hc/<int:user_id>', views.hc, name='hc'),
     path('hcSchedule/<int:user_id>', views.view_schedule, name='view_schedule'),
 
+
 ]

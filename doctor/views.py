@@ -62,7 +62,24 @@ def doctor_logout(request):
 
 
 def doctor_edit_profile(request):
-    return render(request, 'doctor/doctor_edit_profile.html')
+    user = User.objects.get(username='executive.hc@iiita')
+    if request.method == 'GET':
+        return render(request, 'doctor/doctor_edit_profile.html', {'user': user})
+    else:
+        if request.POST.get('first_name'):
+            user.first_name = request.POST.get('first_name')
+            user.save()
+        if request.POST.get('last_name'):
+            user.last_name = request.POST.get('last_name')
+            user.save()
+        if request.POST.get('email'):
+            user.email = request.POST.get('email')
+            user.save()
+        if request.POST.get('password'):
+            password = request.POST.get('password')
+            user.set_password(password)
+            user.save()
+        return redirect('doctor_logged_in')
 
 
 def doctor_view_schedule(request):
