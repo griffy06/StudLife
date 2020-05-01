@@ -317,6 +317,7 @@
             <h2>{{ user.username }}</h2>
         </header>
         <ul>
+            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'logged_in' user.id %}"><span>Back to profile</span></a></li>
             <a class="dashboard" href="{% url 'index' %}">
             <li tabindex="0" class="icon-home"><span>Home</span></li></a>
             <a class="dashboard" href="{% url 'student_edit_profile' user.id %}"><li tabindex="0" class="icon-profile"><span>Edit Profile</span></li></a>

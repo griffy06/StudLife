@@ -318,9 +318,11 @@
             <img src="{% static 'student/images/01.jpg' %}" />
             <h2>{{ user.username }}</h2>
         </header>
-        <ul><a class="dashboard" href="{% url 'index' %}">
+        <ul>
+            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'logged_in' user.id %}"><span>Back to profile</span></a></li>
+            <a class="dashboard" href="{% url 'index' %}">
             <li tabindex="0" class="icon-home"><span>Home</span></li></a>
-            <a class="dashboard" href="{% url 'logged_in' user.id %}"><li tabindex="0" class="icon-profile"><span>Go to profile</span></li></a>
+            
             <a class="dashboard" href="{% url 'about' %}"><li tabindex="0" class="icon-customers"><span>About</span></li></a>
             <a class="dashboard" href="{% url 'developers' %}"><li tabindex="0" class="icon-users"><span>Developers</span></li></a>
             <a class="dashboard" href="{% url 'logout_student' user.id %}"><li tabindex="0" class="icon-signo"><span>Sign Out</span></li></a>

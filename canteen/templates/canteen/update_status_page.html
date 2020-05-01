@@ -356,13 +356,13 @@
         <h2>Canteen</h2>
     </header>
     <ul>
-        <li tabindex="0" class="icon-home"><span>Home</span></li>
-        <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
-        <li tabindex="0" class="icon-profile"><span>Edit Profile</span></li>
-        <li tabindex="0" class="icon-customers"><span>About</span></li>
-        <li tabindex="0" class="icon-users"><span>Developers</span></li>
-        <li tabindex="0" class="icon-signo"><span>Sign Out</span></li>
-    </ul>
+        <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'canteen_logged_in' %}"><span>Back to profile</span></a></li>
+            <li tabindex="0" class="icon-home"><a class="dashboard" href="{% url 'index' %}"><span>Home</span></a></li>
+            <li tabindex="0" class="icon-profile"><a class="dashboard" href="{% url 'canteen_edit_profile' %}"><span>Edit Profile</span></a></li>
+            <li tabindex="0" class="icon-customers"><a class="dashboard" href="{% url 'about' %}"><span>About</span></a></li>
+            <li tabindex="0" class="icon-users"><a class="dashboard" href="{% url 'developers' %}"><span>Developers</span></a></li>
+            <li tabindex="0" class="icon-signo"><a class="dashboard" href="{% url 'canteen_logout' %}"><span>Sign Out</span></a></li>
+         </ul>
 </nav>
 <main>
 <body>

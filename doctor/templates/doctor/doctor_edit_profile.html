@@ -318,7 +318,9 @@
             <img src="{% static 'doctor/images/doctor.jpg' %}" />
             <h2>HC Executive</h2>
         </header>
-        <ul><a class="dashboard" href="{% url 'index' %}">
+        <ul>
+            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'doctor_logged_in' %}"><span>Back to profile</span></a></li>
+            <a class="dashboard" href="{% url 'index' %}">
             <li tabindex="0" class="icon-home"><span>Home</span></li></a>
             <a class="dashboard" href="{% url 'doctor_logged_in' %}"><li tabindex="0" class="icon-profile"><span>Go to profile</span></li></a>
             <a class="dashboard" href="{% url 'about' %}"><li tabindex="0" class="icon-customers"><span>About</span></li></a>

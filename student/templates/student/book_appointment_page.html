@@ -9,7 +9,8 @@
 </head>
 <style>
     body {
-        background: linear-gradient(to bottom left,rgb(188, 241, 188),rgb(248, 248, 133), rgb(248, 204, 123),rgb(248, 129, 129),rgb(255, 120, 143),rgb(252, 136, 252));
+       /* background: linear-gradient(to bottom left,rgb(188, 241, 188),rgb(248, 248, 133), rgb(248, 204, 123),rgb(248, 129, 129),rgb(255, 120, 143),rgb(252, 136, 252));*/
+       background: linear-gradient(to right, #16d6d9, #96cc29);
         margin: 0;
         
         font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -318,6 +319,7 @@
         <h2>{{ user.username }}</h2>
       </header>
         <ul>
+            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'logged_in' user.id %}"><span>Back to profile</span></a></li>
         <a class="dashboard" href="{% url 'index' %}">
             <li tabindex="0" class="icon-home"><span>Home</span></li></a>
             <a class="dashboard" href="{% url 'student_edit_profile' user.id %}"><li tabindex="0" class="icon-profile"><span>Edit Profile</span></li></a>

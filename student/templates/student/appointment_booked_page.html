@@ -3,14 +3,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Outpass granted</title>
+    <title>Appointment granted</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Cookie|Lobster|Satisfy&display=swap" rel="stylesheet">
 </head>
 <style>
 
     body {
-        background: linear-gradient(to bottom left,rgb(188, 241, 188),rgb(248, 248, 133), rgb(248, 204, 123),rgb(248, 129, 129),rgb(255, 120, 143),rgb(252, 136, 252));
+       /* background: linear-gradient(to bottom left,rgb(188, 241, 188),rgb(248, 248, 133), rgb(248, 204, 123),rgb(248, 129, 129),rgb(255, 120, 143),rgb(252, 136, 252));*/
+        background: linear-gradient(to right, #16d6d9, #96cc29);
+
         margin: 0;
 
         font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -406,7 +408,9 @@
             <img src="{% static 'student/images/01.jpg' %}" />
             <h2>{{ user.username }}</h2>
         </header>
-        <ul><a class="dashboard" href="{% url 'index' %}">
+        <ul>
+            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'logged_in' user.id %}"><span>Back to profile</span></a></li>
+            <a class="dashboard" href="{% url 'index' %}">
             <li tabindex="0" class="icon-home"><span>Home</span></li></a>
             <a class="dashboard" href="{% url 'student_edit_profile' user.id %}"><li tabindex="0" class="icon-profile"><span>Edit Profile</span></li></a>
             <a class="dashboard" href="{% url 'about' %}"><li tabindex="0" class="icon-customers"><span>About</span></li></a>
