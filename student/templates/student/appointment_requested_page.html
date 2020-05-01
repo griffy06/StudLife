@@ -183,6 +183,9 @@
       .menu ul li.icon-signo {
         background-image: url("http://www.entypo.com/images/log-out.svg");
       }
+          .menu ul li.icon-arrow-left {
+        background-image: url("http://www.entypo.com/images//arrow-left.svg");
+    }
       .menu ul li:hover {
         background-color: rgba(0, 0, 0, 0.5);
       }
@@ -318,7 +321,7 @@
             <h2>{{ user.username }}</h2>
         </header>
         <ul>
-            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'logged_in' user.id %}"><span>Back to profile</span></a></li>
+            <li tabindex="0" class="icon-arrow-left"><a class="dashboard" href="{% url 'logged_in' user.id %}"><span>Back to profile</span></a></li>
             <a class="dashboard" href="{% url 'index' %}">
             <li tabindex="0" class="icon-home"><span>Home</span></li></a>
             <a class="dashboard" href="{% url 'student_edit_profile' user.id %}"><li tabindex="0" class="icon-profile"><span>Edit Profile</span></li></a>

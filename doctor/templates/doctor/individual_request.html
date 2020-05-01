@@ -177,6 +177,9 @@
       .menu ul li.icon-users {
         background-image: url("http://www.entypo.com/images//users.svg");
       }
+          .menu ul li.icon-arrow-left {
+        background-image: url("http://www.entypo.com/images//arrow-left.svg");
+    }
       .menu ul li.icon-signo {
         background-image: url("http://www.entypo.com/images/log-out.svg");
       }
@@ -314,7 +317,7 @@
         <h2>HC Executive</h2>
       </header>
         <ul>
-            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'doctor_logged_in' %}"><span>Back to profile</span></a></li>
+            <li tabindex="0" class="icon-arrow-left"><a class="dashboard" href="{% url 'doctor_logged_in' %}"><span>Back to profile</span></a></li>
        <li tabindex="0" class="icon-home"><a class="dashboard" href="{% url 'index' %}"><span>Home</span></a></li>
         <li tabindex="0" class="icon-profile"><a class="dashboard" href="{% url 'doctor_edit_profile' %}"><span>Edit Profile</span></a></li>
         <li tabindex="0" class="icon-customers"><a class="dashboard" href="{% url 'about' %}"><span>About</span></a></li>

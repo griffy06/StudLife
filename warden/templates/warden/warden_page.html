@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -206,6 +207,9 @@ main .icon-back{
     .menu ul li.icon-users {
         background-image: url("http://www.entypo.com/images//users.svg");
     }
+      .menu ul li.icon-arrow-left {
+        background-image: url("http://www.entypo.com/images//arrow-left.svg");
+    }
 
     .menu ul li.icon-signo {
         background-image: url("http://www.entypo.com/images/log-out.svg");
@@ -346,26 +350,36 @@ main .icon-back{
             pointer-events: none;
         }
     }
+    a.dashboard{
+        color: white;
+        display: block;
+    }
+    a.dashboard:hover{
+        color: white;
+        display: block;
+        text-decoration: none;
+    }
 </style>
 <nav class="menu" tabindex="0">
     <div class="smartphone-menu-trigger"></div>
     <header class="avatar">
-        <img src="01.jpg" />
+        <img src="{% static 'warden/images/warden.jpg' %}" />
         <h2>Warden</h2>
     </header>
     <ul>
-        <li tabindex="0" class="icon-home"><span>Home</span></li>
-        <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
-        <li tabindex="0" class="icon-profile"><span>Edit Profile</span></li>
-        <li tabindex="0" class="icon-customers"><span>About</span></li>
-        <li tabindex="0" class="icon-users"><span>Developers</span></li>
-        <li tabindex="0" class="icon-signo"><span>Sign Out</span></li>
+              <li tabindex="0" class="icon-arrow-left"><a class="dashboard" href="{% url 'warden_logged_in' %}"><span>Back to profile</span></a></li>
+       <li tabindex="0" class="icon-home"><a class="dashboard" href="{% url 'index' %}"><span>Home</span></a></li>
+        <li tabindex="0" class="icon-profile"><a class="dashboard" href="{% url 'warden_edit_profile' %}"><span>Edit Profile</span></a></li>
+        <li tabindex="0" class="icon-customers"><a class="dashboard" href="{% url 'about' %}"><span>About</span></a></li>
+        <li tabindex="0" class="icon-users"><a class="dashboard" href="{% url 'developers' %}"><span>Developers</span></a></li>
+        <li tabindex="0" class="icon-signo"><a class="dashboard" href="{% url 'warden_logout' %}"><span>Sign Out</span></a> </li>
+
     </ul>
 </nav>
 <main>
 <body>
 
-<div class="icon-back" alt="back"></div>
+<!--<div class="icon-back" alt="back"></div>-->
 {% if all_profiles %}
     <div class="popout container" ><h5 style="margin-bottom: 5%;">Following are the outpass requests:<br></h5>
 <div class="list-group" style="text-align: center;">
