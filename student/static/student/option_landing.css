@@ -13,7 +13,9 @@ a { text-decoration: none; color: #8d8f90; -webkit-transition: all 0.3s; -moz-tr
 a:focus, a:hover { text-decoration: none; color: #f85759; }
 
 
-
+.acc{
+  color: green;
+}
 .page-header { background: url(images/wallpaper_c.jpg)no-repeat; position: relative; background-size: cover; }
 .page-caption { padding-top: 170px; padding-bottom: 174px; }
 .page-title { font-size: 46px; line-height: 1; color: #fff; font-weight: 600; text-align: center; }
@@ -40,8 +42,13 @@ body{
   top:50%;
   left:50%;
   transform : translate(-50% ,-50%);
+  color: yellowgreen;
+  /*background: red;*/
 }
-
+#nc{
+    color: #c3edea;
+  background: #b9ebcc;
+}
 .btn:link,
 .btn:visited{
   text-decoration: none;
@@ -54,24 +61,32 @@ body{
   display:inline-block;
   transition: all .5s;
 }
-
+.denied{
+  color: red;
+  font-family: bold;
+}
 .btn-white{
-  background:#fff;
-  color:#8ac6d1;
+  /*background:red;*/
+  color:#d4ebd0;
 }
 
 .btn:hover{
    box-shadow:0px 10px 10px rgba(0,0,0,0.2);
    transform : translateY(-3px);
+  color: black;
 }
 
 .btn:active{
   box-shadow:0px 5px 10px rgba(0,0,0,0.2);
   transform:translateY(-1px);
+  color: red;
+  background: red;
 }
 
 .btn-bottom-animation-1{
   animation:comeFromBottom 1s ease-out .8s;
+    color: red;
+  background: red;
 }
 
 .btn::after{
@@ -90,7 +105,7 @@ body{
 }
 
 .btn-white::after {
-    background: #ffe0ac;
+    background: white;
 
 }
 
