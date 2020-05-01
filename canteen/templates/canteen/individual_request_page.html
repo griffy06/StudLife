@@ -20,7 +20,7 @@
 
     main {
         position: relative;
-        height: 155vh;
+        height: 93vh;
     }
 
     /*div:hover{
@@ -71,6 +71,20 @@
     #do:hover{
         box-shadow: 0px 0px 10px rgb(223, 10, 10);
     }
+    .popout {
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+}
+@keyframes popout {
+    from{transform:scale(0)}
+    80%{transform:scale(1.2)}
+    to{transform:scale(1)}
+}
+@-webkit-keyframes popout {
+    from{-webkit-transform:scale(0)}
+    80%{-webkit-transform:scale(1.2)}
+    to{-webkit-transform:scale(1)}
+}
     /*main .outpass {
         background: rgba(33, 52, 80, 0.5);
         color: rgb(245, 244, 244); 
@@ -353,7 +367,7 @@
     </nav>
     <main>
         
-        <div class="container" style="margin-top:5%;">
+        <div class="popout container" style="margin-top:5%;">
             <div style="text-align: center;margin-top: 0px;margin-bottom:5%">
                 <h3>Order for<span style="color:rgb(146, 250, 146);"> {{ profile.username }}</span></h3>
             </div>
