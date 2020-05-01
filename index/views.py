@@ -12,3 +12,7 @@ def about(request):
 
 def developers(request):
     return render(request, 'index/developers_page.html')
+
+
+def loading(request):
+    return render(request, 'index/loading_page.html')

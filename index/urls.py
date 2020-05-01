@@ -9,4 +9,5 @@ urlpatterns = [
     path('warden/', include('warden.urls')),
     path('doctor/', include('doctor.urls')),
     path('canteen/', include('canteen.urls')),
+    path('loading_page/', views.loading, name='loading')
 ]
