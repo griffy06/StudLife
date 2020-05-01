@@ -69,6 +69,21 @@
     th{
         color: rgb(146, 250, 146);;
     }
+
+main .icon-back{
+        background-image: url("http://www.entypo.com/images/chevron-thin-left.svg");
+        margin-left: 2%;
+        margin-top: 25%;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 1.5em 1.5em 1.5em 1.5em;
+    }
+    main .icon-back:hover{
+        box-shadow: 0px 0px 10px rgb(252, 248, 248);
+    }
     /*main .outpass {
         background: rgba(33, 52, 80, 0.5);
         color: rgb(245, 244, 244); 
@@ -349,6 +364,8 @@
 </nav>
 <main>
 <body>
+
+<div class="icon-back" alt="back"></div>
 {% if all_profiles %}
     <div class="popout container" ><h5 style="margin-bottom: 5%;">Following are the outpass requests:<br></h5>
 <div class="list-group" style="text-align: center;">
