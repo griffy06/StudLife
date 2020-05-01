@@ -1,19 +1,70 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>cart</title>
+    <link rel="stylesheet" href={% static 'student/cartstyle.css' %}>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400" rel="stylesheet" type="text/css">
+    <link href="http://www.colorname.xyz/style.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+ <link href="../../static/student/cartstyle.css"  rel="stylesheet" >
+<link
+
 </head>
+
+
 <body>
-following items are in the cart:
-{% for item in food %}
+<div class="container">
+    <div class="ananya">
+    YOUR CART:
+</div>
+</div>
+
+ <div class="container-fluid inner">
+  <table class="tableizer-table">
+  <tr class="tableizer-firstrow"><th>FOOD ITEM</th><th>QUANTITY</th><th>PRICE</th></tr>
+
+        {% for item in food %}
     {% for obj in food_item %}
         {% if obj.id == item.food_id %}
-            <li>{{ obj.name }} {{ item.quantity }}</li>
-        {% endif %}
+      <tr>
+          <td>   <p>{{ obj.name }} </p></td>
+
+          <td> {{ item.quantity }}</td>
+       <td><p>Rs. {{ obj.price }}</p></td>
+      </tr>
+      {% endif %}
      {% endfor %}
 {% endfor %}
-<form action="{% url 'place_order' user.id %}"><button type="submit">Order food</button> </form>
-<form action="{% url 'fav' user.id %}"><button type="submit">Add more items</button> </form>
+    </div>
+  </table>
+{#<div class="row">#}
+<div class="button_cont" align="center">
+{#     <div class="row" align="right">#}
+         <form action="{% url 'place_order' user.id %}"><button class="example_b" type="submit">Order food</button> </form>
+
+{##}
+</div>
+<div class="button_cont" align="center">
+<form action="{% url 'fav' user.id %}"><button class="example_b1" type="submit">Add more items</button> </form>
+ </div>
+</div>
+
+{# </div>#}
+</div>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
+
