@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -348,11 +349,20 @@
             pointer-events: none;
         }
     }
+    a.dashboard{
+        color: white;
+        display: block;
+    }
+    a.dashboard:hover{
+        color: white;
+        display: block;
+        text-decoration: none;
+    }
 </style>
 <nav class="menu" tabindex="0">
     <div class="smartphone-menu-trigger"></div>
     <header class="avatar">
-        <img src="01.jpg" />
+        <img src="{% static 'canteen/images/res.webp' %}" />
         <h2>Canteen</h2>
     </header>
     <ul>
