@@ -211,6 +211,10 @@
         background-image: url("http://www.entypo.com/images//users.svg");
     }
 
+    .menu ul li.icon-arrow-left {
+        background-image: url("http://www.entypo.com/images//arrow-left.svg");
+    }
+
     .menu ul li.icon-signo {
         background-image: url("http://www.entypo.com/images/log-out.svg");
     }
@@ -368,10 +372,10 @@
             <h2>Canteen</h2>
         </header>
         <ul>
-            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'canteen_logged_in' %}"><span>Back to profile</span></a></li>
+            <li tabindex="0" class="icon-arrow-left"><a class="dashboard" href="{% url 'canteen_logged_in' %}"><span>Back to profile</span></a></li>
             <a class="dashboard" href="{% url 'index' %}">
             <li tabindex="0" class="icon-home"><span>Home</span></li></a>
-
+            <a class="dashboard" href="{% url 'canteen_edit_profile' %}"><li tabindex="0" class="icon-profile"><span>Edit Profile</span></li></a>
             <a class="dashboard" href="{% url 'about' %}"><li tabindex="0" class="icon-customers"><span>About</span></li></a>
             <a class="dashboard" href="{% url 'developers' %}"><li tabindex="0" class="icon-users"><span>Developers</span></li></a>
             <a class="dashboard" href="{% url 'canteen_logout' %}"><li tabindex="0" class="icon-signo"><span>Sign Out</span></li></a>

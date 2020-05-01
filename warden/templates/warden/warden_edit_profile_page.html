@@ -8,6 +8,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Cookie|Lobster|Satisfy&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
     body {
@@ -319,7 +320,7 @@
             <h2>Warden</h2>
         </header>
         <ul>
-            <li tabindex="0" class="fi-arrow-left"><a class="dashboard" href="{% url 'warden_logged_in' %}"><span>Back to profile</span></a></li>
+            <a class="dashboard" href="{% url 'warden_logged_in' %}"><li tabindex="0" class="icon-profile"><span>Back to profile</span></li></a>
             <a class="dashboard" href="{% url 'index' %}">
             <li tabindex="0" class="icon-home"><span>Home</span></li></a>
 
