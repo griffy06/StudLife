@@ -6,17 +6,379 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Cookie|Lobster|Satisfy&display=swap" rel="stylesheet">
 </head>
+<style>
+    body {
+        background: linear-gradient(to bottom left, rgb(188, 241, 188), rgb(248, 248, 133), rgb(248, 204, 123), rgb(248, 129, 129), rgb(255, 120, 143), rgb(252, 136, 252));
+        margin: 0;
+
+        font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+        color: #fff;
+        padding-left: 240px;
+    }
+
+    main {
+        position: relative;
+        height: 100vh;
+    }
+
+    /*div:hover{
+        background: rgba(33, 52, 80, 1);
+         color: rgb(245, 244, 244); 
+      }*/
+    input {
+        box-shadow: 0px 0px 5px rgba(33, 52, 80);
+    }
+
+    .container {
+        background: rgba(33, 52, 80, 0.5);
+        text-align: center;
+        margin-left: 25%;
+        position: absolute;
+        width: 50%;
+        border-radius: 20px;
+        font-family: montserrat, arial, verdana;
+        padding: 2em 1em 3em 1em;
+        box-shadow: 0px 0px 15px whitesmoke;
+        /*border:1px solid #fff;*/
+        border-style: double;
+        border-width: 15px;
+        margin-top: 5%;
+    }
+
+    .container div {
+        text-align: left;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+   
+    .popout {
+        animation: popout 1s ease;
+        -webkit-animation: popout 1s ease;
+    }
+    @keyframes popout {
+        from{transform:scale(0)}
+        80%{transform:scale(1.2)}
+        to{transform:scale(1)}
+    }
+    @-webkit-keyframes popout {
+        from{-webkit-transform:scale(0)}
+        80%{-webkit-transform:scale(1.2)}
+        to{-webkit-transform:scale(1)}
+    }
+    th{
+        color: rgb(146, 250, 146);;
+    }
+    /*main .outpass {
+        background: rgba(33, 52, 80, 0.5);
+        color: rgb(245, 244, 244); 
+        left: 25%;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width : 40%;
+        height: 40%;
+         right: 10%; 
+        transform: translate3d(-50%, -50%, 0);
+        padding: 1em 2em 1em 2em;
+        text-align: center;
+        border-radius: 20px;
+        font-size: 2em;
+        font-weight: bold;
+        color: #fff;
+        box-shadow: 0px 0px  10px whitesmoke;
+
+      }
+      main .outpass button {
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50px;
+        font-size: large; 
+        border: 1px solid white;
+
+      }*/
+
+
+    main .helper {
+        background: rgba(0, 0, 0, 0.2);
+        color: whitesmoke;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        padding: 1.2em 2em;
+        text-align: center;
+        border-radius: 20px;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    main .helper span {
+        color: rgba(0, 0, 0, 0.2);
+        font-size: 0.4em;
+        display: block;
+    }
+
+    .menu {
+        background: rgb(33, 52, 80);
+        color: white;
+        height: 100vh;
+        width: 240px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        outline: none;
+        box-shadow: 0px 0px 10px whitesmoke;
+
+    }
+
+    .menu .avatar {
+        background: rgba(248, 247, 247, 0.1);
+        padding: 2em 0.5em;
+        text-align: center;
+    }
+
+    .menu .avatar img {
+        width: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid whitesmoke;
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+    }
+
+    .menu .avatar h2 {
+        font-weight: normal;
+        margin-bottom: 0;
+        margin-top: 20px;
+        /* color: white; */
+    }
+
+    .menu ul {
+        list-style: none;
+        padding: 0.5em 0;
+        margin: 0;
+    }
+
+    .menu ul li {
+        padding: 0.5em 1em 0.5em 3em;
+        font-size: 0.95em;
+        font-weight: regular;
+        background-repeat: no-repeat;
+        background-position: left 15px center;
+        background-size: auto 20px;
+        transition: all 0.15s linear;
+        cursor: pointer;
+    }
+
+    .menu ul li.icon-home {
+        background-image: url("http://www.entypo.com/images/home.svg");
+    }
+
+    .menu ul li.icon-dashboard {
+        background-image: url("http://www.entypo.com/images//gauge.svg");
+    }
+
+    .menu ul li.icon-customers {
+        background-image: url("http://www.entypo.com/images//briefcase.svg");
+    }
+
+    .menu ul li.icon-profile {
+        background-image: url("http://www.entypo.com/images/user.svg");
+    }
+
+    .menu ul li.icon-users {
+        background-image: url("http://www.entypo.com/images//users.svg");
+    }
+
+    .menu ul li.icon-signo {
+        background-image: url("http://www.entypo.com/images/log-out.svg");
+    }
+
+    .menu ul li:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .menu ul li:focus {
+        outline: none;
+    }
+
+    @media screen and (max-width: 900px) and (min-width: 400px) {
+        body {
+            padding-left: 90px;
+        }
+
+        .menu {
+            width: 90px;
+        }
+
+        .menu .avatar {
+            padding: 0.5em;
+            position: relative;
+        }
+
+        .menu .avatar img {
+            width: 60px;
+        }
+
+        .menu .avatar h2 {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            margin: 0;
+            min-width: 200px;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.5);
+            transform: translate3d(-20px, -50%, 0);
+            transition: all 0.15s ease-in-out;
+        }
+
+        .menu .avatar:hover h2 {
+            opacity: 1;
+            transform: translate3d(0px, -50%, 0);
+        }
+
+        .menu ul li {
+            height: 60px;
+            background-position: center center;
+            background-size: 30px auto;
+            position: relative;
+
+        }
+
+        .menu ul li span {
+            opacity: 0;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.2em 0.5em;
+            border-radius: 4px;
+            top: 50%;
+            left: 80px;
+            transform: translate3d(-15px, -50%, 0);
+            transition: all 0.15s ease-in-out;
+        }
+
+        .menu ul li span:before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 50%;
+            left: -5px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid rgba(0, 0, 0, 0.5);
+            transform: translateY(-50%);
+        }
+
+        .menu ul li:hover span {
+            opacity: 1;
+            transform: translate3d(0px, -50%, 0);
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        body {
+            padding-left: 0;
+        }
+
+        .menu {
+            width: 230px;
+            box-shadow: 0 0 0 100em rgba(0, 0, 0, 0);
+            transform: translate3d(-230px, 0, 0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu .smartphone-menu-trigger {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 100%;
+            background: #5bc995;
+        }
+
+        .menu .smartphone-menu-trigger:before,
+        .menu .smartphone-menu-trigger:after {
+            content: '';
+            width: 50%;
+            height: 2px;
+            background: #fff;
+            border-radius: 10px;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        .menu .smartphone-menu-trigger:after {
+            top: 55%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        .menu ul li {
+            padding: 1em 1em 1em 3em;
+            font-size: 1.2em;
+        }
+
+        .menu:focus {
+            transform: translate3d(0, 0, 0);
+            box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.6);
+        }
+
+        .menu:focus .smartphone-menu-trigger {
+            pointer-events: none;
+        }
+    }
+    #pp:hover{
+        box-shadow: 0px 0px 10px black;
+        
+    }
+   /* main .icon-back{
+        background-image: url("http://www.entypo.com/images/chevron-thin-left.svg");
+        margin-left: 2%;
+        margin-top: 25%;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        cursor: pointer;
+        border-radius: 50%;
+        padding: 1.5em 1.5em 1.5em 1.5em;
+    }
+    main .icon-back:hover{
+        box-shadow: 0px 0px 10px rgb(252, 248, 248);
+    }*/
+</style>
 <body>
+    <nav class="menu" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <header class="avatar">
+            <img src="01.jpg" />
+            <h2>Doctor</h2>
+        </header>
+        <ul>
+            <li tabindex="0" class="icon-home"><span>Home</span></li>
+            <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
+            <li tabindex="0" class="icon-profile"><span>Edit Profile</span></li>
+            <li tabindex="0" class="icon-customers"><span>About</span></li>
+            <li tabindex="0" class="icon-users"><span>Developers</span></li>
+            <li tabindex="0" class="icon-signo"><span>Sign Out</span></li>
+        </ul>
+    </nav>
+    
+    <main>
 {% if all_profiles %}
-    <div class="container" style="margin-top: 40px;text-align: center"><h5>Following are the appointment requests:<br></h5></div>
-<div class="list-group" style="margin-top: 60px; margin-left: 80px;margin-right: 500px">
+    <div class="container" style="text-align: center;"><h5 style="margin-bottom: 5%;">Following are the appointment requests:<br></h5>
+<div class="list-group">
 {% for profile in all_profiles %}
-    <a href="{% url 'doctor_individual_request' profile.id %}" class="list-group-item list-group-item-action" id="pp">{{ profile }}</a>
+    <a href="{% url 'doctor_individual_request' profile.id %}" class="list-group-item list-group-item-action" id="pp" style="text-align: center;margin-bottom: 3%;">{{ profile }}</a>
 {% endfor %}
 </div>
-
+</div>
 {% else %}
-<div class="container" style="text-align: center;margin-top:40px;"><h2>No appointment requests!</h2></div>
+<div class="container" style="text-align: center;background-color: rgba(74, 255, 98, 0.5); color:black;box-shadow: 0px 0px 10px black;"><h2>No appointment requests!</h2></div>
 {% endif %}
+</main>
 </body>
 </html>
