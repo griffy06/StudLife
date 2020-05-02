@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Developers</title>
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:wght@700|Dancing+Script|Montserrat|Cookie|Lobster|Open+Sans:wght@300|Satisfy&display=swap"
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:wght@700|Libre+Baskerville|Dancing+Script|Montserrat|Cookie|Lobster|Open+Sans:wght@300|Satisfy&display=swap"
     rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
         integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link href="../../static/index/style1.css" rel="stylesheet">
     <script src="../../static/index/developer.js"> </script>
-    </head>
+</head>
     <header>
         <style>
             body{
@@ -35,30 +35,44 @@
 
             #text1 {
                 font-family: 'Amatic SC', cursive;
-                font-weight: ;
                 position: absolute;
                 margin-left: 6%;
 
                 font-size: 50px;
             }
+            .overlay h1 {
+                font-family: 'Lobster', cursive;
+                font-size: 80px;
+                margin-bottom: 30px;
+            }
+            .overlay h3{
+                font-family: 'Libre Baskerville', serif;
+            }
+            .square-container2 h2{
+                font-family: 'montserrat', arial, verdana;
+                font-weight: 100;
+                text-align: justify;
+            }
+            .square-container h2{
+                font-family: 'Libre Baskerville', serif;
+                font-weight: 100;
+            }
         </style>
 
         <div class="overlay">
             <h6 id="text1">Go back</h6>
-            <a class="btn btn-light" href="{% url 'index'%}" role="button" id="p1"></a>
+            <a class="btn btn-light" href="{% url 'cart' user.id%}" role="button" id="p1"></a>
             <h1>StudLife</h1>
-            <h1>STUDLIFE</h1>
             <h3>DEVELOPERS</h3>
-            {#<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>#}
-            {#	<br>#}
-            {#	<button>READ MORE</button>#}
-            {#		</div>#}
+            <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
+            	<br>
+            	<button>READ MORE</button>
+            		</div> -->
         </div>
     </header>
 
-<body>
 
-    
+    <body>
 
         <div class="centerflipcards">
 
@@ -69,7 +83,7 @@
                         <div class="align-center"><img src="../../static/index/images/ananya.JPG" class="boxshadow"
                                 alt="" height="350"></div>
                         <h2 class="textshadow">Ananya Mohanty</h2>
-                        {#				<h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3>#}
+                        			<!-- <h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3> -->
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
@@ -90,7 +104,7 @@
                         <div class="align-center"><img src="../../static/index/images/cheena.JPG" alt="" height="350">
                         </div>
                         <h2 class="textshadow">Cheena Buddhiraja</h2>
-                        {#				<h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3>#}
+                        			<!-- <h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3> -->
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
@@ -111,7 +125,7 @@
                         <div class="align-center"><img src="../../static/index/images/rohini.JPG" class="boxshadow"
                                 alt="" height="350"></div>
                         <h2 class="textshadow">Rohini Mishra</h2>
-                        {#				<h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3>#}
+                        				<!-- <h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3> -->
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
@@ -139,7 +153,7 @@
                         <div class="align-center"><img src="../../static/index/images/ashima.JPG" class="boxshadow"
                                 alt="" height="350"></div>
                         <h2 class="textshadow">Ashima Sehgal</h2>
-                        {#				<h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3>#}
+                        				<!-- <h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3> -->
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
@@ -160,16 +174,15 @@
                     <div class="square-container">
                         <div class="align-center"><img src="../../static/index/images/cheena.JPG" alt="" height="350">
                         </div>
-                        <h2 class="textshadow">Cheena Buddhiraja</h2>
-                        {#				<h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3>#}
+                        <h2 class="textshadow">Ankita Chandra </h2>
+                        				<!-- <h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3> -->
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
                 <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-bundle.png">
                     <div class="square-container2">
                         <div class="align-center"></div>
-                        <h2> Cheena is a second year undergraduate student at IIIT-A hailing from Rohtak. She enjoys
-                            making web applications and spends her free time doing volunteer work.</h2>
+                        <h2> TO DO</h2>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
@@ -181,15 +194,15 @@
                     <div class="square-container">
                         <div class="align-center"><img src="http://titanicthemes.com/files/flipbox/kallyas2.png"
                                 class="boxshadow" alt=""></div>
-                        <h2 class="textshadow">Ankita Chandra</h2>
-                        {#				<h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3>#}
+                        <h2 class="textshadow">Aayushi Thakur</h2>
+                        				<!-- <h3 class="textshadow">The #1 Selling Most Enjoyable and Creative Multipurpose WordPress theme.</h3> -->
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
                 <div class='square2' data-image="http://titanicthemes.com/files/flipbox/kallyas-wedding.jpg">
                     <div class="square-container2">
                         <div class="align-center"></div>
-                        <h2>The only theme you'll ever need. No codding skills needed.</h2>
+                        <h2>TO DO</h2>
                     </div>
                     <div class="flip-overlay"></div>
                 </div>
