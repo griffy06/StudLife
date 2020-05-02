@@ -3,32 +3,163 @@
 <html>
     <head>
         <title>StudLife</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{% static 'student/style.css' %}">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Amatic+SC:wght@700|Montserrat|Cookie|Lobster|Satisfy&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'student/style.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    </head>
         <style>
-            img{
+            body {
+                background: linear-gradient(to bottom, whitesmoke, white, rgb(23, 182, 161));
+                margin: 0;
+          
+                font-family: montserrat, arial, verdana;
+                height: 170vh;
+              }
+          
+              .container {
+                background: rgba(249, 252, 251, 0.5);
+                text-align: center;
+                margin-left: 13%;
+                position: absolute;
+                width: 90%;
+                border-radius: 20px;
+                font-family: montserrat, arial, verdana;
+                padding: 2em 1em 3em 1em;
+                box-shadow: 0px 0px 15px rgb(23, 182, 161);
+                /*border:1px solid #fff;*/
+          
+                border-color: white;
+                border-width: 15px;
+                margin-top: 5%;
+              }
+          
+              img {
                 height: 200px;
                 width: 200px;
-            }
-            .thumbnail img{
-    width: 100%;
-}
-.thumbnail .caption-full{
-
-    padding: 9px;
-}
+              }
+          
+              .thumbnail img {
+                width: 100%;
+              }
+          
+              .thumbnail .caption-full {
+          
+                padding: 9px;
+              }
+          
+              .thumbnail {
+                padding-bottom: 2em;
+                padding-top: 2em;
+              }
+          
+              .container .thumbnail .caption .btn {
+                margin-top: 3%;
+              }
+          
+              .caption h4 {
+                margin-top: 3%;
+              }
+          
+              .btn-success:hover {
+                box-shadow: 0px 0px 15px rgb(22, 238, 22);
+              }
+          
+              .btn-danger:hover {
+                box-shadow: 0px 0px 15px red;
+              }
+          
+              main .icon-back {
+                background-image: url("http://www.entypo.com/images/chevron-thin-left.svg");
+                margin-left: 2%;
+                margin-top: 25%;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                cursor: pointer;
+                border-radius: 50%;
+                padding: 1.5em 1.5em 1.5em 1.5em;
+              }
+          
+              main .icon-back:hover {
+                box-shadow: 0px 0px 10px rgb(252, 248, 248);
+              }
+          
+              #p1 {
+                background-image: url("http://www.entypo.com/images/shopping-cart.svg");
+                background-repeat: no-repeat;
+                background-color: rgb(23, 182, 161, 0.5);
+                height: 50px;
+                width: 50px;
+                float: right;
+                position: absolute;
+                margin-top: -5%;
+                margin-left: 95%;
+              }
+          
+              #p2 {
+                background-image: url("http://www.entypo.com/images/arrow-left.svg");
+                background-repeat: no-repeat;
+                background-color: rgb(23, 182, 161, 0.5);
+                height: 50px;
+                width: 50px;
+                float: left;
+                position: absolute;
+                margin-top: -5%;
+                margin-left: 2%;
+              }
+          
+              #p1:hover {
+                box-shadow: 0px 0px 10px rgb(12, 85, 75);
+              }
+          
+              #p2:hover {
+                box-shadow: 0px 0px 10px rgb(12, 85, 75);
+              }
+          
+              .head h1 {
+                font-family: 'Amatic SC', cursive;
+                text-align: center;
+                font-size: 80px;
+                text-shadow: 0px 0px 15px rgb(23, 182, 161);
+              }
+          
+              #text1 {
+                font-family: 'Amatic SC', cursive;
+                position: absolute;
+                margin-left: 6%;
+                margin-top: -5%;
+                font-size: 50px;
+              }
+          
+              #text2 {
+                font-family: 'Amatic SC', cursive;
+                position: absolute;
+                margin-left: 85%;
+                margin-top: -5%;
+                font-size: 50px;
+              }
         </style>
-    </head>
     <body>
       
       
 <header>
- <nav class="navbar navbar-default">
+ <!-- <nav class="navbar navbar-default">
 	  <div class="container">
    
 
@@ -37,36 +168,36 @@
              <div><a class="btn btn-info btn-lg" href="{% url 'cart' user.id%}" role="button" style="height:30px;width:80px;float: right;">View cart</a></div>
 
   </div>
-	</nav>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-     <h3>
+	</nav> -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:rgb(23, 182, 161, 0.5);margin-top: 0px;height:80px;box-shadow: 0px 0px 10px rgb(12, 85, 75);">
+     
         <a class="navbar-brand" href="#">MENU</a>
-     </h3>
+     
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 		  <ul class="navbar-nav">
-        <li class="nav-item active">
-          <h4>
+        <li class="nav-item">
+        
               <a class="nav-link" href="{% url 'fav' user.id%}">Hostel Favourites</a></li>
 
-          </h4>
+        
             <li class="nav-item">
-          <h4>
+          
               <a class="nav-link" href="{% url 'refreshment' user.id%}">Refreshments</a></li>
 
-          </h4>
-           <li class="active">
-              <h4>
+          
+           <li class="nav-item active">
+            
                   <a class="nav-link" href="{% url 'fast' user.id%}">Fast Food <span class="sr-only">(current)</span></a></li>
 
-              </h4>
+              
 
             <li class="nav-item">
-              <h4>
+              
                   <a class="nav-link" href="{% url 'maincourse' user.id%}">Main Course</a></li>
-              </h4>
+              
 
 		  </ul>
 		</div>
@@ -75,6 +206,13 @@
 
 </header>
 
+<div class="head">
+    <h1>Studlife Night Canteen</h1>
+    <h6 id="text1">Go back</h6>
+    <a class="btn btn-light" href="{% url 'cart' user.id%}" role="button" id="p1"></a>
+    <h6 id="text2">View Cart</h6>
+    <a class="btn btn-info btn-lg" href="{% url 'logged_in' user.id%}" role="button" id="p2"></a>
+  </div>
 <!--
 <div class="container">
     <header class="jumbotron">
@@ -99,8 +237,8 @@
       <div class="caption">
         <h4> Maggi (Plain) </h4>
         <h5> Rs.25</h5>
-                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=4 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
-          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=4 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+                    <a class="btn btn-success " href="{% url 'add_food' user_id=user.id food_id=4 val=2%}" role="button" style="float: left;">Add item</a>
+          <a class="btn btn-danger " href="{% url 'remove_food' user_id=user.id food_id=4 val=2%}" role="button" style="float: right;">Remove </a>
 
       </div>
 
@@ -115,8 +253,8 @@
       <div class="caption">
         <h4> Egg Maggi </h4>
         <h5> Rs.30</h5>
-                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=15 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
-          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=15 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+                    <a class="btn btn-success" href="{% url 'add_food' user_id=user.id food_id=15 val=2%}" role="button" style="float: left;">Add item</a>
+          <a class="btn btn-danger" href="{% url 'remove_food' user_id=user.id food_id=15 val=2%}" role="button" style="float: right;">Remove </a>
 
       </div>
 
@@ -131,8 +269,8 @@
           <div class="caption">
             <h4> Cheese Maggi </h4>
             <h5> Rs.30</h5>
-                        <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=16 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
-          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=16 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+                        <a class="btn btn-success" href="{% url 'add_food' user_id=user.id food_id=16 val=2%}" role="button" style="float: left;">Add item</a>
+          <a class="btn btn-danger" href="{% url 'remove_food' user_id=user.id food_id=16 val=2%}" role="button" style="float: right;">Remove </a>
 
           </div>
 
@@ -148,8 +286,8 @@
           <div class="caption">
             <h4> Macaroni (Veg) </h4>
             <h5> Rs.25</h5>
-                        <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=3 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
-          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=3 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+                        <a class="btn btn-success" href="{% url 'add_food' user_id=user.id food_id=3 val=2%}" role="button" style="float: left;">Add item</a>
+          <a class="btn btn-danger" href="{% url 'remove_food' user_id=user.id food_id=3 val=2%}" role="button" style="float: right;">Remove </a>
 
           </div>
 
@@ -168,8 +306,8 @@
       <div class="caption">
         <h4> Egg Macaroni </h4>
         <h5> Rs.30</h5>
-                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=17 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
-          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=17 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+                    <a class="btn btn-success" href="{% url 'add_food' user_id=user.id food_id=17 val=2%}" role="button" style="float: left; ">Add item</a>
+          <a class="btn btn-danger" href="{% url 'remove_food' user_id=user.id food_id=17 val=2%}" role="button" style="float: right;">Remove </a>
 
       </div>
 
@@ -185,8 +323,8 @@
       <div class="caption">
         <h4> Roll (Veg) </h4>
         <h5> Rs.25</h5>
-                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=8 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
-          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=8 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+                    <a class="btn btn-success" href="{% url 'add_food' user_id=user.id food_id=8 val=2%}" role="button" style="float: left;">Add item</a>
+          <a class="btn btn-danger" href="{% url 'remove_food' user_id=user.id food_id=8 val=2%}" role="button" style="float: right;">Remove </a>
 
       </div>
 
@@ -201,8 +339,8 @@
       <div class="caption">
         <h4> Chicken Roll </h4>
         <h5> Rs.45</h5>
-                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=6 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
-          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=6 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+                    <a class="btn btn-success" href="{% url 'add_food' user_id=user.id food_id=6 val=2%}" role="button" style="float: left;">Add item</a>
+          <a class="btn btn-danger" href="{% url 'remove_food' user_id=user.id food_id=6 val=2%}" role="button" style="float: right; ">Remove </a>
 
       </div>
 
@@ -218,8 +356,8 @@
       <div class="caption">
         <h4> Paneer Roll </h4>
         <h5> Rs.30</h5>
-                    <a class="btn btn-success btn-lg" href="{% url 'add_food' user_id=user.id food_id=18 val=2%}" role="button" style="float: left; margin-top: -10px">Add item</a>
-          <a class="btn btn-danger btn-lg" href="{% url 'remove_food' user_id=user.id food_id=18 val=2%}" role="button" style="float: right; margin-top: -10px">Remove </a>
+                    <a class="btn btn-success" href="{% url 'add_food' user_id=user.id food_id=18 val=2%}" role="button" style="float: left;">Add item</a>
+          <a class="btn btn-danger" href="{% url 'remove_food' user_id=user.id food_id=18 val=2%}" role="button" style="float: right;">Remove </a>
 
       </div>  
 
