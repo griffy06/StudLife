@@ -142,6 +142,7 @@ def pdf(request,user_id):
     permit = Granted_outpasses.objects.get(username=user.username)
     go=permit.full_name
     params = {
+        'username' :permit.username,
         'full_name' : go,
         'going_to' : permit.destination,
         'vehicle': permit.vehicle,
