@@ -38,13 +38,18 @@ class UserFormView(View):
         except Group.DoesNotExist:
             return render(request, self.template_name)
 
-
+@login_required(login_url='student_login')
 def logged_in(request,user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
+    print(user_id)
     user = User.objects.get(pk=user_id)
     return render(request,'student/student_dashboard.html',{'user':user})
 
-
+@login_required(login_url='student_login')
 def outpass(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     if request.method == "GET":
         user = User.objects.get(pk=user_id)
         if user.student.outpass == 0:
@@ -74,36 +79,52 @@ def outpass(request, user_id):
 
 
 
-
+@login_required(login_url='student_login')
 def view_menu(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     return render(request, 'student/menu.html',{'user':user})
 
-
+@login_required(login_url='student_login')
 def fastfood(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     return render(request,'student/fastfood.html',{'user':user})
 
-
+@login_required(login_url='student_login')
 def fav(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     return render(request,'student/menu.html',{'user':user})
 
-
+@login_required(login_url='student_login')
 def maincourse(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     return render(request,'student/maincourse.html',{'user':user})
 
-
+@login_required(login_url='student_login')
 def refreshment(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     return render(request,'student/refreshments.html',{'user':user})
 
+@login_required(login_url='student_login')
 def hc(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     return render(request, 'student/hc.html',{'user':user})
 
+@login_required(login_url='student_login')
 def digilocker(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     if request.method == 'POST':
         user=User.objects.get(pk=user_id)
         form = DocumentForm(request.POST, request.FILES)
@@ -124,8 +145,10 @@ def digilocker(request, user_id):
     # Render list page with the documents and the form
     return render(request, 'student/digilocker_page.html', {'files': files, 'form': form, 'user' : user})
 
-
+@login_required(login_url='student_login')
 def back_outpass(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     user.student.outpass = 0
     user.save()
@@ -136,14 +159,15 @@ def back_outpass(request, user_id):
     except Granted_outpasses.DoesNotExist:
         return redirect('outpass', user_id)
 
-
+@login_required(login_url='student_login')
 def pdf(request,user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     permit = Granted_outpasses.objects.get(username=user.username)
-    go=permit.full_name
     params = {
         'username' :permit.username,
-        'full_name' : go,
+        'full_name' : permit.full_name,
         'going_to' : permit.destination,
         'vehicle': permit.vehicle,
         'date' : permit.date,
@@ -151,11 +175,12 @@ def pdf(request,user_id):
         'departure_time':permit.departure_time,
         'arrival_time': permit.arrival_time,
     }
-
     return Render.render('student/pdf.html', params)
 
-
+@login_required(login_url='student_login')
 def book_appointment(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     if request.method == "GET":
         user = User.objects.get(pk=user_id)
         if user.student.appointments == 0:
@@ -179,8 +204,10 @@ def book_appointment(request, user_id):
         profile.save()
         return render(request, 'student/appointment_requested_page.html', {'user': user})
 
-
+@login_required(login_url='student_login')
 def back_appointment(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     user.student.appointments = 0
     user.save()
@@ -191,12 +218,17 @@ def back_appointment(request, user_id):
     except Granted_appointment.DoesNotExist:
         return redirect('book_appointment', user_id)
 
-
+@login_required(login_url='student_login')
 def view_schedule(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     return render(request, 'student/schedule.html',{'user':user})
 
+@login_required(login_url='student_login')
 def pdf_appointment(request,user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     permit = Granted_appointment.objects.get(username=user.username)
     params = {
@@ -207,16 +239,17 @@ def pdf_appointment(request,user_id):
     }
     return Render.render('student/pdf_appointment.html', params)
 
-
+@login_required(login_url='student_login')
 def logout_student(request,user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     logout(request)
     return redirect('index')
 
-
-
-
-
+@login_required(login_url='student_login')
 def order_food(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     try:
         profile = Profile3.objects.get(username=user.username)
@@ -233,8 +266,10 @@ def order_food(request, user_id):
     except Profile3.DoesNotExist:
         return redirect('fav', user_id)
 
-
+@login_required(login_url='student_login')
 def add_food(request, user_id, food_id, val):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     try:
         order = Order.objects.get(food_id=food_id, username=user.username)
@@ -264,8 +299,10 @@ def add_food(request, user_id, food_id, val):
         else:
             return redirect('refreshment', user.id)
 
-
+@login_required(login_url='student_login')
 def remove_food(request, user_id, food_id, val):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     try:
         order = Order.objects.get(food_id=food_id, username=user.username)
@@ -295,8 +332,10 @@ def remove_food(request, user_id, food_id, val):
         else:
             return redirect('refreshment', user.id)
 
-
+@login_required(login_url='student_login')
 def back_order(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     profile = Profile3.objects.get(username=user.username)
     profile.delete()
@@ -306,8 +345,10 @@ def back_order(request, user_id):
             order.delete()
     return redirect('fav', user.id)
 
-
+@login_required(login_url='student_login')
 def cart(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     food = Order.objects.filter(username=user.username)
     food_item = Food_item.objects.all()
@@ -316,16 +357,20 @@ def cart(request, user_id):
     else:
         return render(request, 'student/cart.html', {'user':user, 'food':food, 'food_item':food_item})
 
-
+@login_required(login_url='student_login')
 def place_order(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     profile = Profile3.objects.get(username=user.username)
     profile.order_status=0
     profile.save()
     return render(request,'student/order_requested.html', {'user':user})
 
-
+@login_required(login_url='student_login')
 def student_edit_profile(request, user_id):
+    if request.user.id != user_id:
+        return redirect('student_login')
     user = User.objects.get(pk=user_id)
     if request.method == 'GET':
         return render(request, 'student/edit_profile_page.html', {'user': user})

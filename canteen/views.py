@@ -2,10 +2,15 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from student.models import Order
 from .models import Food_item, Profile3
 from django.contrib.auth import logout
+from django.contrib.auth.models import Group
 
+def has_group(user, group_name):
+    group = Group.objects.get(name=group_name)
+    return True if group in user.groups.all() else False
 
 class UserFormView(View):
 
@@ -28,18 +33,23 @@ class UserFormView(View):
         except Group.DoesNotExist:
             return render(request, self.template_name)
 
-
+@login_required(login_url='canteen_login')
 def logged_in(request):
-
+    if has_group(request.user,"canteen_managers")==False:
+        return redirect('canteen_login')
     return render(request, 'canteen/canteen_dashboard.html')
 
-
+@login_required(login_url='canteen_login')
 def view_requests(request):
+    if has_group(request.user,"canteen_managers")==False:
+        return redirect('canteen_login')
     all_profiles = Profile3.objects.all()
     return render(request,'canteen/canteen_page.html',{'all_profiles': all_profiles})
 
-
+@login_required(login_url='canteen_login')
 def individual_request(request, profile_id):
+    if has_group(request.user,"canteen_managers")==False:
+        return redirect('canteen_login')
     profile = Profile3.objects.get(pk=profile_id)
     order = Order.objects.all()
     food_item = Food_item.objects.all()
@@ -57,8 +67,10 @@ def individual_request(request, profile_id):
             profile.save()
             return redirect('view_orders')
 
-
+@login_required(login_url='canteen_login')
 def update_status(request, profile_id):
+    if has_group(request.user,"canteen_managers")==False:
+        return redirect('canteen_login')
     profile = Profile3.objects.get(pk=profile_id)
     order = Order.objects.all()
     food_item = Food_item.objects.all()
@@ -69,13 +81,17 @@ def update_status(request, profile_id):
         profile.save()
         return redirect('view_orders')
 
-
+@login_required(login_url='canteen_login')
 def canteen_logout(request):
+    if has_group(request.user,"canteen_managers")==False:
+        return redirect('canteen_login')
     logout(request)
     return redirect('index')
 
-
+@login_required(login_url='canteen_login')
 def canteen_edit_profile(request):
+    if has_group(request.user,"canteen_managers")==False:
+        return redirect('canteen_login')
     user = User.objects.get(username='canteen_manager@iiita')
     if request.method == 'GET':
         return render(request, 'canteen/canteen_edit_profile_page.html', {'user': user})
@@ -94,6 +110,3 @@ def canteen_edit_profile(request):
             user.set_password(password)
             user.save()
         return redirect('canteen_logged_in')
-
-
-

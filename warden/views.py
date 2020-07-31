@@ -2,9 +2,14 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from .models import Profile, Granted_outpasses
 from django.contrib.auth import logout
+from django.contrib.auth.models import Group
 
+def has_group(user, group_name):
+    group = Group.objects.get(name=group_name)
+    return True if group in user.groups.all() else False
 
 class UserFormView(View):
 
@@ -27,22 +32,26 @@ class UserFormView(View):
         except Group.DoesNotExist:
             return render(request, self.template_name)
 
-
+@login_required(login_url='warden_login')
 def logged_in(request):
-
+    if has_group(request.user,"wardens")==False:
+        return redirect('warden_login')
     return render(request, 'warden/warden_dashboard.html')
 
-
+@login_required(login_url='warden_login')
 def view_requests(request):
+    if has_group(request.user,"wardens")==False:
+        return redirect('warden_login')
     all_profiles = Profile.objects.all()
     return render(request,'warden/warden_page.html',{'all_profiles': all_profiles})
 
-
+@login_required(login_url='warden_login')
 def individual_request(request, profile_id):
+    if has_group(request.user,"wardens")==False:
+        return redirect('warden_login')
     profile = Profile.objects.get(pk=profile_id)
     user = User.objects.get(username=profile.username)
     if request.method == "GET":
-
         return render(request, 'warden/individual_request_page.html', {'profile': profile})
 
     else:
@@ -67,13 +76,17 @@ def individual_request(request, profile_id):
             profile.delete()
             return redirect('view_requests')
 
-
+@login_required(login_url='warden_login')
 def warden_logout(request):
+    if has_group(request.user,"wardens")==False:
+        return redirect('warden_login')
     logout(request)
     return redirect('index')
 
-
+@login_required(login_url='warden_login')
 def warden_edit_profile(request):
+    if has_group(request.user,"wardens")==False:
+        return redirect('warden_login')
     user = User.objects.get(username='warden@iiita')
     if request.method == 'GET':
         return render(request, 'warden/warden_edit_profile_page.html', {'user': user})
@@ -92,4 +105,3 @@ def warden_edit_profile(request):
             user.set_password(password)
             user.save()
         return redirect('warden_logged_in')
-
